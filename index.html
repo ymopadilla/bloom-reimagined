@@ -20,11 +20,31 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bloom Reimagined | Transition Coaching for Your Next Chapter">
     <meta name="twitter:description" content="Bloom Reimagined provides transition coaching to help you build the internal infrastructure to thrive through change—using a practical, research-backed framework for transformation.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Archivo';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url('fonts/archivo-800.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Atkinson Hyperlegible Next';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('fonts/atkinson-hyperlegible-next-400.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Atkinson Hyperlegible Next';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('fonts/atkinson-hyperlegible-next-700.woff2') format('woff2');
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -32,18 +52,16 @@
         }
 
         :root {
-            /* Updated color palette from logo */
-            --cream: #FAF6F1;
-            --sage-dark: #5C6B4A;
-            --sage: #7A8B6A;
-            --sage-light: #A4B091;
-            --sand: #D4C8B8;
-            --terracotta: #C4785C;
-            --terracotta-deep: #A85D42;
-            --warm-brown: #5C4A3D;
-            --text-dark: #3D3D3D;
-            --text-medium: #5A5A5A;
-            --white: #FFFFFF;
+            /* Brand palette: four colors only */
+            --ink: #22252B;
+            --snow: #F3EFE7;
+            --violet: #5E4B7A;
+            --chartreuse: #C3D545;
+            /* Pure white is used only inside form fields */
+            --field: #FFFFFF;
+
+            --font-head: 'Archivo', 'Arial Narrow', Arial, sans-serif;
+            --font-body: 'Atkinson Hyperlegible Next', Verdana, Arial, sans-serif;
         }
 
         html {
@@ -51,12 +69,28 @@
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            background: var(--cream);
-            color: var(--text-dark);
+            font-family: var(--font-body);
+            font-weight: 400;
+            background: var(--snow);
+            color: var(--ink);
             line-height: 1.6;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-head);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--ink);
+        }
+
+        a {
+            color: var(--violet);
+        }
 
         /* ========================================
            ACCESSIBILITY UTILITIES
@@ -78,11 +112,10 @@
             left: 16px;
             top: 8px;
             padding: 10px 14px;
-            background: var(--sage-dark);
-            color: var(--white);
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
+            background: var(--chartreuse);
+            color: var(--ink);
+            text-decoration: underline;
+            font-weight: 700;
             transform: translateY(-200%);
             transition: transform 0.2s ease;
             z-index: 2000;
@@ -96,7 +129,7 @@
         button:focus-visible,
         input:focus-visible,
         textarea:focus-visible {
-            outline: 3px solid rgba(196, 120, 92, 0.65);
+            outline: 3px solid var(--ink);
             outline-offset: 3px;
         }
 
@@ -109,20 +142,39 @@
             * { transition: none !important; }
         }
 
+        /* ========================================
+           BUTTONS (chartreuse, always ink text)
+           ======================================== */
+        .btn,
+        .nav__cta,
+        .hero__cta,
+        .work-with-me__cta,
+        .contact-form__button {
+            display: inline-block;
+            background: var(--chartreuse);
+            color: var(--ink);
+            border: 2px solid var(--chartreuse);
+            border-radius: 6px;
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.05rem;
+            line-height: 1.2;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
         /* ========================================
-           NAVIGATION
+           NAVIGATION (solid ink)
            ======================================== */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(250, 246, 241, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--ink);
             z-index: 1000;
-            padding: 12px 24px;
-            border-bottom: 1px solid rgba(92, 107, 74, 0.1);
+            padding: 10px 24px;
         }
 
         .nav__inner {
@@ -131,30 +183,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 6px 0;
             gap: 12px;
-        }
-
-        /* Mobile header spacing: keep logo + burger comfortably in-frame */
-        @media (max-width: 480px) {
-            .nav {
-                padding: 14px 14px;
-            }
-            .nav__inner {
-                padding: 8px 0;
-                gap: 10px;
-            }
-            .nav__logo img {
-                height: 42px;
-            }
-            .nav__hamburger {
-                width: 44px;
-                height: 44px;
-                padding: 12px 10px;
-            }
-            .nav__hamburger-line {
-                width: 24px;
-            }
         }
 
         .nav__logo {
@@ -164,26 +193,26 @@
         }
 
         .nav__logo img {
-            height: 50px;
-            width: auto;
+            height: 48px;
+            width: 48px;
+            display: block;
         }
 
         .nav__links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             list-style: none;
         }
 
         .nav__links a {
             text-decoration: none;
-            color: var(--text-medium);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--snow);
+            font-size: 1rem;
         }
 
         .nav__links a:hover {
-            color: var(--sage-dark);
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         .nav__links-cta {
@@ -191,18 +220,8 @@
         }
 
         .nav__cta {
-            background: var(--sage-dark);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.3s ease;
-        }
-
-        .nav__cta:hover {
-            background: var(--sage);
+            padding: 10px 20px;
+            font-size: 0.95rem;
         }
 
         /* Hamburger Menu */
@@ -210,12 +229,12 @@
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 28px;
-            height: 20px;
+            width: 44px;
+            height: 44px;
+            padding: 13px 9px;
             background: transparent;
             border: none;
             cursor: pointer;
-            padding: 0;
             z-index: 1001;
         }
 
@@ -223,13 +242,12 @@
             display: block;
             width: 100%;
             height: 2px;
-            background: var(--sage-dark);
-            border-radius: 2px;
-            transition: all 0.3s ease;
+            background: var(--snow);
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .nav__hamburger.active .nav__hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: translateY(8px) rotate(45deg);
         }
 
         .nav__hamburger.active .nav__hamburger-line:nth-child(2) {
@@ -237,10 +255,14 @@
         }
 
         .nav__hamburger.active .nav__hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         @media (max-width: 768px) {
+            .nav {
+                padding: 10px 16px;
+            }
+
             .nav__hamburger {
                 display: flex;
             }
@@ -249,158 +271,95 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
+                width: 75%;
                 max-width: 300px;
                 height: 100vh;
-                background: var(--cream);
-                display: flex;
+                background: var(--ink);
+                border-left: 2px solid var(--snow);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 32px;
-                transition: right 0.3s ease;
-                box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+                gap: 28px;
+                transition: right 0.3s ease, visibility 0.3s;
+                visibility: hidden;
                 z-index: 1000;
             }
 
             .nav__links.active {
                 right: 0;
+                visibility: visible;
             }
 
             .nav__links a {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
 
             .nav__links-cta {
                 display: block;
-                margin-top: 16px;
+                margin-top: 12px;
             }
 
             .nav__links-cta a {
-                background: var(--sage-dark);
-                color: white;
-                padding: 12px 28px;
-                border-radius: 25px;
-                font-weight: 600;
-                font-size: 1rem;
+                display: inline-block;
+                background: var(--chartreuse);
+                color: var(--ink);
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-weight: 700;
             }
 
             .nav__cta {
                 display: none;
             }
-
-            .nav__inner {
-                justify-content: space-between;
-            }
         }
 
         /* ========================================
-           HERO SECTION
+           HERO (interim; restyled in the hero commit)
            ======================================== */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: var(--ink);
+            color: var(--snow);
+            padding: 140px 24px 96px;
             text-align: center;
-            padding: 120px 24px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 30%, rgba(92, 107, 74, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(196, 120, 92, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(212, 200, 184, 0.15) 0%, transparent 60%);
-            pointer-events: none;
         }
 
         .hero__content {
             max-width: 800px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero__logo {
-            margin-bottom: 40px;
-        }
-
-        .hero__logo img {
-            height: 280px;
-            width: auto;
+            margin: 0 auto;
         }
 
         .hero__tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: var(--sage-dark);
-            font-style: italic;
-            margin-bottom: 32px;
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 2rem;
+            line-height: 1.15;
+            margin-bottom: 24px;
         }
 
         .hero__description {
             font-size: 1.15rem;
-            color: var(--text-medium);
             max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
-        }
-
-        .hero__cta {
-            display: inline-block;
-            background: var(--sage-dark);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            letter-spacing: 0.03em;
-            transition: all 0.3s ease;
-        }
-
-        .hero__cta:hover {
-            background: var(--sage);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(92, 107, 74, 0.3);
+            margin: 0 auto 32px;
         }
 
         /* ========================================
-           ABOUT SECTION
+           SHARED SECTION TYPE
+           ======================================== */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 32px;
+        }
+
+        /* ========================================
+           ABOUT / PHILOSOPHY
            ======================================== */
         .about {
-            padding: 100px 24px;
-            background: var(--white);
+            padding: 96px 24px;
         }
 
         .about__inner {
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--sage-dark);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 32px;
         }
 
         .about__grid {
@@ -412,9 +371,8 @@
 
         .about__text p {
             font-size: 1.05rem;
-            color: var(--text-medium);
             margin-bottom: 20px;
-            line-height: 1.8;
+            line-height: 1.75;
         }
 
         .about__text p:last-child {
@@ -422,114 +380,108 @@
         }
 
         .about__philosophy {
-            background: linear-gradient(135deg, rgba(92, 107, 74, 0.08) 0%, rgba(196, 120, 92, 0.08) 100%);
-            border-radius: 20px;
-            padding: 40px;
-            border-left: 4px solid var(--terracotta);
+            padding: 4px 0 4px 28px;
+            border-left: 4px solid var(--violet);
         }
 
         .about__philosophy-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--warm-brown);
+            font-size: 1.35rem;
             margin-bottom: 16px;
         }
 
         .about__philosophy p {
             font-size: 1rem;
-            color: var(--text-medium);
             line-height: 1.7;
-            font-style: italic;
         }
 
-        /* Core Beliefs */
+        .about__philosophy p + p {
+            margin-top: 16px;
+        }
+
+        /* Core Beliefs: flat snow, plain lines */
         .about__beliefs {
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--cream) url('what-I-believe-soft.png') center center / cover no-repeat;
-            border-radius: 20px;
+            margin-top: 72px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about__beliefs-title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 24px;
-            text-align: center;
+            margin-bottom: 16px;
         }
 
         .beliefs-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
             list-style: none;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
         .beliefs-list li {
-            padding: 20px 24px;
-            background: white;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            color: var(--text-medium);
-            border-left: 3px solid var(--sage);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--ink);
+            font-size: 1.1rem;
             line-height: 1.5;
+        }
+
+        .beliefs-list li:first-child {
+            border-top: 1px solid var(--ink);
         }
 
         /* Who I Help */
         .about__audiences {
-            margin-top: 60px;
+            margin-top: 72px;
             text-align: center;
         }
 
         .about__audiences-title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--text-dark);
             margin-bottom: 20px;
         }
 
         .about__audiences-intro {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-head);
+            font-weight: 800;
             font-size: 1.3rem;
-            color: var(--sage-dark);
-            font-style: italic;
-            margin-bottom: 12px;
+            margin: 0 auto 16px;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .about__audiences-subtext {
             font-size: 1.05rem;
-            color: var(--text-medium);
-            margin-bottom: 30px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 24px;
+            max-width: 35rem;
         }
 
-        .about__audiences-image {
-            max-width: 700px;
-            margin: 0 auto;
+        .about__audiences-subtext--strong {
+            font-weight: 700;
         }
 
-        .about__audiences-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
+        .about__audiences-note {
+            font-size: 0.95rem;
+        }
+
+        .audience-list {
+            list-style: none;
+            max-width: 420px;
+            margin: 0 auto 24px;
+            text-align: left;
+        }
+
+        .audience-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--ink);
+            font-size: 1rem;
+        }
+
+        .audience-list li:last-child {
+            border-bottom: none;
         }
 
         /* ========================================
-           FRAMEWORK SECTION
+           FRAMEWORK
            ======================================== */
         .framework {
             padding: 80px 24px;
-            background: var(--cream);
+            border-top: 1px solid var(--ink);
         }
 
         .framework__inner {
@@ -539,7 +491,11 @@
 
         .framework__header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
+        }
+
+        .framework__header .section-title {
+            margin-bottom: 0;
         }
 
         .framework__image {
@@ -547,18 +503,17 @@
         }
 
         .framework__image img {
-            max-width: 100%;
+            display: block;
+            width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
         }
 
         /* ========================================
-           WORK WITH ME SECTION
+           WORK WITH ME
            ======================================== */
         .work-with-me {
-            padding: 100px 24px;
-            background: var(--white);
+            padding: 96px 24px;
+            border-top: 1px solid var(--ink);
         }
 
         .work-with-me__inner {
@@ -568,7 +523,7 @@
 
         .work-with-me__header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .work-with-me__content {
@@ -577,85 +532,52 @@
 
         .work-with-me__content > p {
             font-size: 1.1rem;
-            color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 24px;
+            line-height: 1.75;
+            margin: 0 auto 24px;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .work-with-me__options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 24px;
-            margin: 50px 0;
+            margin: 48px 0;
+            list-style: none;
         }
 
-        .work-with-me__option {
-            background: var(--cream);
-            border-radius: 16px;
-            padding: 32px 28px;
+        .offer {
+            border: 2px solid var(--ink);
+            border-radius: 6px;
+            padding: 28px 24px;
             text-align: left;
-            border-top: 4px solid var(--sage);
         }
 
-        .work-with-me__option:nth-child(2) {
-            border-top-color: var(--terracotta);
+        .offer__name {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
         }
 
-        .work-with-me__option:nth-child(3) {
-            border-top-color: var(--sand);
-        }
-
-        .work-with-me__option h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-dark);
+        .offer__meta {
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .work-with-me__option p {
-            font-size: 0.95rem;
-            color: var(--text-medium);
+        .offer p {
+            font-size: 1rem;
             line-height: 1.6;
         }
 
         .work-with-me__cta-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--text-dark);
-            margin-top: 40px;
-            margin-bottom: 24px;
-        }
-
-        .work-with-me__cta {
-            display: inline-block;
-            background: var(--sage-dark);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            letter-spacing: 0.03em;
-            transition: all 0.3s ease;
-        }
-
-        .work-with-me__cta:hover {
-            background: var(--sage);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(92, 107, 74, 0.3);
+            font-size: 1.15rem;
+            margin: 40px 0 24px;
         }
 
         /* ========================================
-           MEET YOUR COACH SECTION
+           MEET YOUR COACH
            ======================================== */
         .meet-coach {
-            padding: 100px 24px;
-            background: var(--cream);
+            padding: 96px 24px;
+            border-top: 1px solid var(--ink);
         }
 
         .meet-coach__inner {
@@ -677,17 +599,16 @@
         }
 
         .meet-coach__image img {
+            display: block;
             width: 280px;
             height: 280px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
 
         .meet-coach__text p {
             font-size: 1.1rem;
-            color: var(--text-medium);
-            line-height: 1.8;
+            line-height: 1.75;
             margin-bottom: 20px;
         }
 
@@ -695,15 +616,10 @@
             margin-bottom: 0;
         }
 
-        .meet-coach__text em {
-            font-style: italic;
-            color: var(--text-dark);
-        }
-
         @media (max-width: 768px) {
             .meet-coach__content {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
             }
 
             .meet-coach__image img {
@@ -713,11 +629,11 @@
         }
 
         /* ========================================
-           CONTACT SECTION
+           CONTACT
            ======================================== */
         .contact {
-            padding: 100px 24px;
-            background: var(--cream);
+            padding: 96px 24px;
+            border-top: 1px solid var(--ink);
         }
 
         .contact__inner {
@@ -728,19 +644,13 @@
 
         .contact__text {
             font-size: 1.1rem;
-            color: var(--text-medium);
             margin-bottom: 40px;
             line-height: 1.7;
         }
 
-        /* Contact Form */
         .contact-form {
             text-align: left;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .contact-form__group {
@@ -749,36 +659,25 @@
 
         .contact-form__label {
             display: block;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
         .contact-form__label .optional {
             font-weight: 400;
-            color: var(--text-medium);
-            font-size: 0.85rem;
         }
 
         .contact-form__input,
         .contact-form__textarea {
             width: 100%;
             padding: 14px 16px;
-            font-family: 'Nunito', sans-serif;
+            font-family: var(--font-body);
             font-size: 1rem;
-            border: 1px solid rgba(92, 107, 74, 0.2);
-            border-radius: 10px;
-            background: var(--cream);
-            color: var(--text-dark);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-form__input:focus,
-        .contact-form__textarea:focus {
-            outline: none;
-            border-color: var(--sage);
-            box-shadow: 0 0 0 3px rgba(92, 107, 74, 0.1);
+            border: 2px solid var(--ink);
+            border-radius: 6px;
+            background: var(--field);
+            color: var(--ink);
         }
 
         .contact-form__textarea {
@@ -788,41 +687,23 @@
 
         .contact-form__button {
             width: 100%;
-            padding: 16px 24px;
-            background: var(--sage-dark);
-            color: white;
-            font-family: 'Nunito', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .contact-form__button:hover {
-            background: var(--sage);
-            transform: translateY(-2px);
         }
 
         .contact-form__note {
             margin-top: 16px;
-            font-size: 0.85rem;
-            color: var(--text-medium);
-            font-style: italic;
+            font-size: 0.95rem;
             text-align: center;
         }
 
         .contact-form__button:disabled {
             opacity: 0.7;
             cursor: wait;
-            transform: none;
         }
 
         .contact-form__error {
             margin-bottom: 16px;
-            font-size: 0.95rem;
-            color: var(--terracotta-deep);
+            font-size: 1rem;
+            font-weight: 700;
             text-align: center;
         }
 
@@ -836,11 +717,10 @@
 
         .contact-thanks {
             text-align: center;
-            background: white;
+            border: 2px solid var(--ink);
+            border-radius: 6px;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .contact-thanks:focus {
@@ -848,68 +728,44 @@
         }
 
         .contact-thanks__title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.9rem;
-            font-weight: 600;
-            color: var(--sage-dark);
-            line-height: 1.3;
+            font-size: 1.6rem;
             margin-bottom: 16px;
         }
 
         .contact-thanks__text {
-            font-family: 'Nunito', sans-serif;
             font-size: 1.05rem;
-            color: var(--text-medium);
             line-height: 1.7;
         }
 
         .contact__alt {
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-            color: var(--text-medium);
-        }
-
-        .contact__alt a {
-            color: var(--sage-dark);
-            text-decoration: none;
-            border-bottom: 1px solid var(--sage-dark);
-        }
-
-        .contact__alt a:hover {
-            color: var(--terracotta);
-            border-color: var(--terracotta);
+            margin-bottom: 32px;
+            font-size: 1rem;
         }
 
         .contact__social {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         .contact__social a {
             width: 44px;
             height: 44px;
-            background: var(--sage-light);
+            background: var(--ink);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--snow);
             text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .contact__social a:hover {
-            background: var(--sage-dark);
-            transform: translateY(-2px);
         }
 
         /* ========================================
-           COLLECTIVE SECTION
+           COLLECTIVE
            ======================================== */
         .collective {
             padding: 80px 24px;
-            background: linear-gradient(135deg, rgba(92, 107, 74, 0.06) 0%, rgba(196, 120, 92, 0.06) 100%);
+            border-top: 1px solid var(--ink);
             text-align: center;
         }
 
@@ -919,43 +775,44 @@
         }
 
         .collective__title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-dark);
             margin-bottom: 20px;
-            letter-spacing: 0.02em;
         }
 
         .collective__text {
             font-size: 1.05rem;
-            color: var(--text-medium);
-            line-height: 1.8;
+            line-height: 1.75;
             margin-bottom: 24px;
         }
 
-        .collective__link {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            color: var(--terracotta);
-            text-decoration: none;
-            border-bottom: 1px solid var(--terracotta);
-            padding-bottom: 2px;
-            transition: color 0.3s ease, border-color 0.3s ease;
+        .collective__pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 24px 0;
         }
 
-        .collective__link:hover {
-            color: var(--terracotta-deep);
-            border-color: var(--terracotta-deep);
+        .collective__pills span {
+            border: 1px solid var(--ink);
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .collective__link {
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         /* ========================================
-           FOOTER
+           FOOTER (solid ink)
            ======================================== */
         .footer {
-            background: var(--warm-brown);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 60px 24px 30px;
+            background: var(--ink);
+            color: var(--snow);
+            padding: 3.5rem 24px 32px;
         }
 
         .footer__inner {
@@ -968,35 +825,27 @@
             justify-content: space-between;
             align-items: flex-start;
             padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--snow);
             flex-wrap: wrap;
             gap: 40px;
         }
 
-        .footer__brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
         .footer__brand img {
-            height: 50px;
-            width: auto;
-            opacity: 0.9;
+            height: 64px;
+            width: 64px;
+            display: block;
         }
 
         .footer__links {
             display: flex;
-            gap: 40px;
+            gap: 48px;
         }
 
         .footer__link-group h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: white;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 14px;
         }
 
         .footer__link-group ul {
@@ -1007,19 +856,21 @@
             margin-bottom: 10px;
         }
 
-        .footer__link-group a {
-            color: rgba(255, 255, 255, 0.6);
+        .footer__link-group a,
+        .footer__legal a {
+            color: var(--snow);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
 
-        .footer__link-group a:hover {
-            color: white;
+        .footer__link-group a:hover,
+        .footer__legal a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         .footer__bottom {
-            padding-top: 30px;
+            padding-top: 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1028,23 +879,12 @@
         }
 
         .footer__copyright {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .footer__legal {
             display: flex;
             gap: 24px;
-        }
-
-        .footer__legal a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer__legal a:hover {
-            color: white;
         }
 
         /* ========================================
@@ -1058,40 +898,22 @@
         }
 
         @media (max-width: 768px) {
-            .hero__logo img {
-                height: 140px;
-            }
-            
-            .hero__tagline {
-                font-size: 1.2rem;
-            }
-            
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .footer__top {
                 flex-direction: column;
             }
-            
+
             .footer__links {
                 flex-direction: column;
-                gap: 30px;
+                gap: 28px;
             }
-            
+
             .footer__bottom {
                 flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 100px 20px 60px;
-            }
-            
-            .hero__logo img {
-                height: 120px;
+                align-items: flex-start;
             }
         }
     </style>
@@ -1102,7 +924,7 @@
     <nav class="nav">
         <div class="nav__inner">
             <a href="#top" class="nav__logo">
-                <img src="BR-icon-logo.png" alt="Bloom Reimagined" decoding="async">
+                <img src="images/logo-reversed.svg" alt="Bloom Reimagined home" width="48" height="48">
             </a>
             <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
                 <span class="nav__hamburger-line"></span>
@@ -1126,9 +948,6 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero__content">
-            <div class="hero__logo">
-                <img src="bloom-reimagined-logo.png" alt="Bloom Reimagined" decoding="async">
-            </div>
             <h1 class="sr-only">Bloom Reimagined</h1>
             <p class="hero__tagline">Transition Coaching for Your Next Chapter</p>
             <p class="hero__description">
@@ -1141,7 +960,6 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about__inner">
-            <span class="section-label">Philosophy</span>
             <h2 class="section-title">You are built to blossom into more</h2>
             
             <div class="about__grid">
@@ -1161,7 +979,7 @@
                     <p>
                         The Japanese art of Kintsugi repairs broken pottery with gold, making the cracks visible and beautiful rather than hiding them. Someone who has been broken and healed can become more beautiful and more lovable than ever before.
                     </p>
-                    <p style="margin-top: 16px;">
+                    <p>
                         We are each other's wounded healers. Your story—your transitions, your struggles, your growth—is your credential. The gold is already in you.
                     </p>
                 </div>
@@ -1195,31 +1013,28 @@
                 <p class="about__audiences-subtext">
                     She doesn't need a cheerleader. She doesn't need someone to tell her she's amazing and it'll all work out. She needs someone who will look her situation straight in the eye, say the thing nobody else will say, and still be standing there when it's hard.
                 </p>
-                <p class="about__audiences-subtext" style="font-weight: 600; color: var(--text-dark);">
+                <p class="about__audiences-subtext about__audiences-subtext--strong">
                     That's the work I do.
                 </p>
-                <p class="about__audiences-subtext" style="font-weight: 600; color: var(--text-dark);">
+                <p class="about__audiences-subtext about__audiences-subtext--strong">
                     If any of this is you, let's talk:
                 </p>
-                <ul style="list-style: none; max-width: 420px; margin: 0 auto 20px; text-align: left;">
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Career change or job loss</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Empty nest or shifting family dynamics</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Parenting adult children</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Divorce or relationship transition</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Retirement or leaving a long-held role</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Loss of identity, purpose, or direction</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid rgba(92,107,74,0.12); font-size: 0.95rem; color: var(--text-medium);">→ Graduation and the "what now" that follows</li>
-                    <li style="padding: 8px 0; font-size: 0.95rem; color: var(--text-medium);">→ Knowing something has to change — but not knowing what</li>
+                <ul class="audience-list">
+                    <li>→ Career change or job loss</li>
+                    <li>→ Empty nest or shifting family dynamics</li>
+                    <li>→ Parenting adult children</li>
+                    <li>→ Divorce or relationship transition</li>
+                    <li>→ Retirement or leaving a long-held role</li>
+                    <li>→ Loss of identity, purpose, or direction</li>
+                    <li>→ Graduation and the "what now" that follows</li>
+                    <li>→ Knowing something has to change — but not knowing what</li>
                 </ul>
                 <p class="about__audiences-subtext">
                     You don't have to have it figured out to reach out. You just have to be ready to stop pretending you're fine.
                 </p>
-                <p class="about__audiences-subtext" style="font-size: 0.9rem; color: var(--text-medium); font-style: italic; max-width: 550px; margin-left: auto; margin-right: auto;">
+                <p class="about__audiences-subtext about__audiences-note">
                     <strong>One thing worth knowing:</strong> Bloom Reimagined is coaching, not therapy. I work with women who are ready to move forward and need someone honest in their corner. If what you're carrying requires clinical support, I'll tell you that too — and point you toward someone who can actually help.
                 </p>
-                <div class="about__audiences-image">
-                    <img src="who-I-help.png" alt="A winding path through changing seasons, representing life's transitions and the journey of transformation" loading="lazy" decoding="async">
-                </div>
             </div>
         </div>
     </section>
@@ -1228,7 +1043,7 @@
     <section class="framework" id="framework">
         <div class="framework__inner">
             <header class="framework__header">
-                <span class="section-label">My Approach</span>
+                <h2 class="section-title">My Approach</h2>
             </header>
 
             <div class="framework__image">
@@ -1241,7 +1056,6 @@
     <section class="work-with-me" id="pricing">
         <div class="work-with-me__inner">
             <header class="work-with-me__header">
-                <span class="section-label">Work With Me</span>
                 <h2 class="section-title">Your Investment in Transformation</h2>
             </header>
 
@@ -1252,29 +1066,23 @@
 
                 <p>Your first step is a <strong>$185 Root Session</strong>. Everything else we figure out together.</p>
 
-                <div class="work-with-me__options" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 50px 0;">
-                    <div style="text-align: center; max-width: 220px;">
-                        <div style="width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, rgba(92,107,74,0.12) 0%, rgba(92,107,74,0.06) 100%); border: 3px solid var(--sage); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 16px; padding: 20px;">
-                            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--sage-dark); line-height: 1.3;">Root<br>Session</span>
-                            <span style="font-size: 0.8rem; color: var(--text-medium); margin-top: 6px;">45 min · $185</span>
-                        </div>
-                        <p style="font-size: 0.9rem; color: var(--text-medium); line-height: 1.6;">Your first step. A real conversation — not a sales call — about where you are and where you want to go.</p>
-                    </div>
-                    <div style="text-align: center; max-width: 220px;">
-                        <div style="width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, rgba(212,200,184,0.4) 0%, rgba(212,200,184,0.15) 100%); border: 3px solid var(--sand); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 16px; padding: 20px;">
-                            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--warm-brown); line-height: 1.3;">Monthly<br>Accountability</span>
-                            <span style="font-size: 0.8rem; color: var(--text-medium); margin-top: 6px;">Monthly</span>
-                        </div>
-                        <p style="font-size: 0.9rem; color: var(--text-medium); line-height: 1.6;">Continued coaching and accountability for those who want a steady partner as they grow.</p>
-                    </div>
-                    <div style="text-align: center; max-width: 220px;">
-                        <div style="width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, rgba(196,120,92,0.15) 0%, rgba(196,120,92,0.06) 100%); border: 3px solid var(--terracotta); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 16px; padding: 20px;">
-                            <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--terracotta-deep); line-height: 1.3;">Three-Month<br>Program</span>
-                            <span style="font-size: 0.8rem; color: var(--text-medium); margin-top: 6px;">3 months</span>
-                        </div>
-                        <p style="font-size: 0.9rem; color: var(--text-medium); line-height: 1.6;">A deep dive through the full BLOOM Framework. This is where lasting transformation happens.</p>
-                    </div>
-                </div>
+                <ul class="work-with-me__options">
+                    <li class="offer">
+                        <h3 class="offer__name">Root Session</h3>
+                        <p class="offer__meta">45 min · $185</p>
+                        <p>Your first step. A real conversation — not a sales call — about where you are and where you want to go.</p>
+                    </li>
+                    <li class="offer">
+                        <h3 class="offer__name">Monthly Accountability</h3>
+                        <p class="offer__meta">Monthly</p>
+                        <p>Continued coaching and accountability for those who want a steady partner as they grow.</p>
+                    </li>
+                    <li class="offer">
+                        <h3 class="offer__name">Three-Month Program</h3>
+                        <p class="offer__meta">3 months</p>
+                        <p>A deep dive through the full BLOOM Framework. This is where lasting transformation happens.</p>
+                    </li>
+                </ul>
 
                 <p class="work-with-me__cta-text">Ready to explore what's possible? Let's start with a conversation.</p>
                 <a href="#contact" class="work-with-me__cta">Request a Root Session</a>
@@ -1285,7 +1093,6 @@
     <!-- About Section (Meet Your Coach) -->
     <section class="meet-coach" id="about-me">
         <div class="meet-coach__inner">
-            <span class="section-label">About</span>
             <h2 class="section-title">Meet Your Coach</h2>
             
             <div class="meet-coach__content">
@@ -1305,7 +1112,6 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact__inner">
-            <span class="section-label">Get Started</span>
             <h2 class="section-title">Ready to Begin?</h2>
             <p class="contact__text">
                 Your next chapter is waiting. Reach out to schedule a conversation about where you are and where you want to go.
@@ -1353,7 +1159,6 @@
     <!-- Part of Something Greater Section -->
     <section class="collective">
         <div class="collective__inner">
-            <span class="section-label">Part of Something Greater</span>
             <h2 class="collective__title">Discover to Bloom Collective</h2>
             <p class="collective__text">
                 Bloom Reimagined is part of the Discover to Bloom Collective — a growing community of coaches and women committed to transformation, growth, and living fully aligned with their purpose.
@@ -1361,10 +1166,10 @@
             <p class="collective__text">
                 The Collective brings together complementary coaching expertise under one roof: 1:1 coaching, intensive breakthrough retreats, small groups, and soon — a women's roundtable, a podcast, and a YouTube channel where real conversations happen about the real stuff of life in transition.
             </p>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 24px 0;">
-                <span style="background: white; border-radius: 30px; padding: 10px 22px; font-size: 0.9rem; color: var(--sage-dark); font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">🎙️ D2B Podcast — Coming Soon</span>
-                <span style="background: white; border-radius: 30px; padding: 10px 22px; font-size: 0.9rem; color: var(--sage-dark); font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">▶️ D2B YouTube — Coming Soon</span>
-                <span style="background: white; border-radius: 30px; padding: 10px 22px; font-size: 0.9rem; color: var(--sage-dark); font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">⭕ Women's Roundtable — Coming Soon</span>
+            <div class="collective__pills">
+                <span>🎙️ D2B Podcast — Coming Soon</span>
+                <span>▶️ D2B YouTube — Coming Soon</span>
+                <span>⭕ Women's Roundtable — Coming Soon</span>
             </div>
             <a href="https://discover2bloom.com" class="collective__link" target="_blank" rel="noopener noreferrer">Explore the Collective →</a>
         </div>
@@ -1377,7 +1182,7 @@
         <div class="footer__inner">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="BR-icon-logo.png" alt="Bloom Reimagined" loading="lazy" decoding="async">
+                    <img src="images/logo-reversed.svg" alt="Bloom Reimagined" width="64" height="64" loading="lazy">
                 </div>
                 <div class="footer__links">
                     <div class="footer__link-group">

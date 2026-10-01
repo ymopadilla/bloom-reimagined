@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | Bloom Reimagined</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Archivo';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url('fonts/archivo-800.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Atkinson Hyperlegible Next';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('fonts/atkinson-hyperlegible-next-400.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Atkinson Hyperlegible Next';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('fonts/atkinson-hyperlegible-next-700.woff2') format('woff2');
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,27 +36,19 @@
         }
 
         :root {
-            --cream: #FAF6F1;
-            --sage-dark: #5C6B4A;
-            --sage: #7A8B6A;
-            --sage-light: #A4B091;
-            --sand: #D4C8B8;
-            --terracotta: #C4785C;
-            --terracotta-deep: #A85D42;
-            --warm-brown: #5C4A3D;
-            --text-dark: #3D3D3D;
-            --text-medium: #5A5A5A;
-            --white: #FFFFFF;
-        }
+            --ink: #22252B;
+            --snow: #F3EFE7;
+            --violet: #5E4B7A;
+            --chartreuse: #C3D545;
 
-        html {
-            scroll-behavior: smooth;
+            --font-head: 'Archivo', 'Arial Narrow', Arial, sans-serif;
+            --font-body: 'Atkinson Hyperlegible Next', Verdana, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            background: var(--cream);
-            color: var(--text-dark);
+            font-family: var(--font-body);
+            background: var(--snow);
+            color: var(--ink);
             line-height: 1.6;
         }
 
@@ -43,11 +58,9 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(250, 246, 241, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--ink);
             z-index: 1000;
-            padding: 12px 24px;
-            border-bottom: 1px solid rgba(92, 107, 74, 0.1);
+            padding: 10px 24px;
         }
 
         .nav__inner {
@@ -65,22 +78,19 @@
         }
 
         .nav__logo img {
-            height: 50px;
-            width: auto;
+            height: 48px;
+            width: 48px;
+            display: block;
         }
 
         .nav__back {
-            color: var(--sage-dark);
+            color: var(--snow);
             text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
         }
 
         .nav__back:hover {
-            color: var(--terracotta);
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         /* Content */
@@ -91,33 +101,31 @@
         }
 
         .legal__title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-head);
+            font-weight: 800;
             font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
+            line-height: 1.15;
             margin-bottom: 8px;
         }
 
         .legal__updated {
-            font-size: 0.9rem;
-            color: var(--text-medium);
+            font-size: 0.95rem;
             margin-bottom: 40px;
         }
 
         .legal h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--sage-dark);
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1.4rem;
+            line-height: 1.2;
             margin-top: 40px;
             margin-bottom: 16px;
         }
 
         .legal p {
             font-size: 1rem;
-            color: var(--text-medium);
             margin-bottom: 16px;
-            line-height: 1.8;
+            line-height: 1.75;
         }
 
         .legal ul {
@@ -127,51 +135,43 @@
 
         .legal li {
             font-size: 1rem;
-            color: var(--text-medium);
             margin-bottom: 8px;
             line-height: 1.7;
         }
 
         .legal a {
-            color: var(--sage-dark);
+            color: var(--violet);
             text-decoration: underline;
-        }
-
-        .legal a:hover {
-            color: var(--terracotta);
-        }
-
-        .legal strong {
-            color: var(--text-dark);
         }
 
         /* Footer */
         .footer {
-            background: var(--warm-brown);
-            color: rgba(255, 255, 255, 0.7);
+            background: var(--ink);
+            color: var(--snow);
             padding: 40px 24px;
             text-align: center;
         }
 
         .footer p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .footer a {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--snow);
             text-decoration: none;
             margin: 0 12px;
         }
 
         .footer a:hover {
-            color: white;
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         @media (max-width: 600px) {
             .legal__title {
                 font-size: 2rem;
             }
-            
+
             .legal {
                 padding: 100px 20px 60px;
             }
@@ -182,7 +182,7 @@
     <nav class="nav">
         <div class="nav__inner">
             <a href="index.html" class="nav__logo">
-                <img src="BR-icon-logo.png" alt="Bloom Reimagined">
+                <img src="images/logo-reversed.svg" alt="Bloom Reimagined home" width="48" height="48">
             </a>
             <a href="index.html" class="nav__back">← Back to Home</a>
         </div>
