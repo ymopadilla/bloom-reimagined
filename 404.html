@@ -57,6 +57,23 @@
             line-height: 1.6;
         }
 
+        a:focus-visible {
+            outline: 3px solid var(--ink);
+            outline-offset: 3px;
+        }
+
+        .nav :focus-visible,
+        .footer :focus-visible {
+            outline-color: var(--snow);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
         /* Navigation */
         .nav {
             position: fixed;
@@ -200,7 +217,7 @@
             display: inline-block;
             background: var(--chartreuse);
             color: var(--ink);
-            border: 2px solid var(--chartreuse);
+            border: 2px solid var(--ink);
             border-radius: 6px;
             padding: 14px 28px;
             font-weight: 700;

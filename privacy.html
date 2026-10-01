@@ -52,6 +52,23 @@
             line-height: 1.6;
         }
 
+        a:focus-visible {
+            outline: 3px solid var(--ink);
+            outline-offset: 3px;
+        }
+
+        .nav :focus-visible,
+        .footer :focus-visible {
+            outline-color: var(--snow);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
         /* Navigation */
         .nav {
             position: fixed;

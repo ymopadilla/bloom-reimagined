@@ -191,6 +191,7 @@
             transform: translateY(0);
         }
 
+        /* Focus: ink outline on snow, snow outline on ink (both 13.39:1) */
         a:focus-visible,
         button:focus-visible,
         input:focus-visible,
@@ -199,13 +200,26 @@
             outline-offset: 3px;
         }
 
+        .nav :focus-visible,
+        .hero :focus-visible,
+        .footer :focus-visible {
+            outline-color: var(--snow);
+        }
+
         section[id] {
             scroll-margin-top: 90px;
         }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            * { transition: none !important; }
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+            a:hover, button:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
         }
 
         /* ========================================
@@ -228,6 +242,24 @@
             line-height: 1.2;
             text-decoration: none;
             cursor: pointer;
+        }
+
+        /* On snow, buttons get an ink edge so the shape holds 13.39:1 */
+        .work-with-me__cta,
+        .contact-form__button {
+            border-color: var(--ink);
+        }
+
+        /* Hover keeps ink on chartreuse; show it with an underline */
+        .btn:hover,
+        .nav__cta:hover,
+        .hero__cta:hover,
+        .work-with-me__cta:hover,
+        .contact-form__button:hover,
+        .nav__links-cta a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
         }
 
         /* ========================================
@@ -790,7 +822,8 @@
             margin-bottom: 8px;
         }
 
-        .contact-form__label .optional {
+        .contact-form__label .optional,
+        .contact-form__label .required {
             font-weight: 400;
         }
 
@@ -967,7 +1000,7 @@
             gap: 48px;
         }
 
-        .footer__link-group h4 {
+        .footer__heading {
             font-family: var(--font-head);
             font-weight: 800;
             font-size: 1rem;
@@ -1052,12 +1085,12 @@
             <a href="#top" class="nav__logo">
                 <img src="images/logo-reversed.svg" alt="Bloom Reimagined home" width="48" height="48">
             </a>
-            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
+            <button class="nav__hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
                 <span class="nav__hamburger-line"></span>
                 <span class="nav__hamburger-line"></span>
                 <span class="nav__hamburger-line"></span>
             </button>
-            <ul class="nav__links" id="primary-navigation" aria-hidden="true">
+            <ul class="nav__links" id="primary-navigation">
                 <li><a href="#about">Philosophy</a></li>
                 <li><a href="#framework">Approach</a></li>
                 <li><a href="#about-me">About</a></li>
@@ -1253,11 +1286,11 @@
                 <input type="hidden" name="_subject" value="New Bloom Reimagined inquiry">
                 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
                 <div class="contact-form__group">
-                    <label for="name" class="contact-form__label">Name</label>
+                    <label for="name" class="contact-form__label">Name <span class="required">(required)</span></label>
                     <input type="text" id="name" name="name" class="contact-form__input" autocomplete="name" required>
                 </div>
                 <div class="contact-form__group">
-                    <label for="email" class="contact-form__label">Email</label>
+                    <label for="email" class="contact-form__label">Email <span class="required">(required)</span></label>
                     <input type="email" id="email" name="email" class="contact-form__input" autocomplete="email" required>
                 </div>
                 <div class="contact-form__group">
@@ -1265,7 +1298,7 @@
                     <input type="tel" id="phone" name="phone" class="contact-form__input" autocomplete="tel">
                 </div>
                 <div class="contact-form__group">
-                    <label for="message" class="contact-form__label">Message</label>
+                    <label for="message" class="contact-form__label">Message <span class="required">(required)</span></label>
                     <textarea id="message" name="message" class="contact-form__textarea" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="contact-form__button">Send Message</button>
@@ -1318,7 +1351,7 @@
                 </div>
                 <div class="footer__links">
                     <div class="footer__link-group">
-                        <h4>Navigate</h4>
+                        <p class="footer__heading">Navigate</p>
                         <ul>
                             <li><a href="#about">Philosophy</a></li>
                             <li><a href="#framework">Approach</a></li>
@@ -1328,7 +1361,7 @@
                         </ul>
                     </div>
                     <div class="footer__link-group">
-                        <h4>Connect</h4>
+                        <p class="footer__heading">Connect</p>
                         <ul>
                             <li><a href="https://www.instagram.com/bloomreimagined" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                             <li><a href="https://www.linkedin.com/in/yvonne-padilla-94847137/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -1357,28 +1390,27 @@
             return window.matchMedia('(max-width: 768px)').matches;
         }
 
-        function setMenuState(open) {
+        function setMenuState(open, moveFocus = true) {
             hamburger.classList.toggle('active', open);
             navLinks.classList.toggle('active', open);
             hamburger.setAttribute('aria-expanded', String(open));
 
-            // Only hide from assistive tech on mobile (desktop menu is always visible)
-            if (isMobileNav()) {
-                navLinks.setAttribute('aria-hidden', String(!open));
-            } else {
-                navLinks.setAttribute('aria-hidden', 'false');
-            }
+            // On phones, a closed menu is inert: links can't be focused or read.
+            // On desktop the links are always visible and never inert.
+            navLinks.inert = isMobileNav() && !open;
 
-            if (open) {
-                const first = navLinkAnchors[0];
-                if (first) first.focus();
-            } else {
-                hamburger.focus();
+            if (moveFocus) {
+                if (open) {
+                    const first = navLinkAnchors[0];
+                    if (first) first.focus();
+                } else {
+                    hamburger.focus();
+                }
             }
         }
 
-        // Initialize state
-        setMenuState(false);
+        // Initialize state without moving focus
+        setMenuState(false, false);
 
         hamburger.addEventListener('click', () => {
             const open = !hamburger.classList.contains('active');
@@ -1388,7 +1420,7 @@
         // Close menu when a link is clicked (mobile)
         navLinkAnchors.forEach(link => {
             link.addEventListener('click', () => {
-                if (isMobileNav()) setMenuState(false);
+                if (isMobileNav()) setMenuState(false, false);
             });
         });
 
@@ -1404,14 +1436,14 @@
             if (!isMobileNav()) return;
             const clickedInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
             if (!clickedInsideNav && hamburger.classList.contains('active')) {
-                setMenuState(false);
+                setMenuState(false, false);
             }
         });
 
-        // Keep aria-hidden correct when resizing
+        // Keep inert correct when resizing, without moving focus
         window.addEventListener('resize', () => {
             const open = hamburger.classList.contains('active');
-            setMenuState(open);
+            setMenuState(open, false);
         });
     </script>
 
