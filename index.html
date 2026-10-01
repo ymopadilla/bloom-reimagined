@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bloom Reimagined | Transition Coaching in Colorado Springs</title>
-    <meta name="description" content="Honest transition coaching from Yvonne Padilla, a retired school principal in Colorado Springs. Start with a 45-minute Root Session for $185.">
+    <meta name="description" content="Transition coaching from Yvonne Padilla in Colorado Springs for career changers, veterans, retirees, and empty nesters. Start with a 45-minute Root Session.">
     <link rel="canonical" href="https://bloomreimagined.com/">
     <meta name="theme-color" content="#22252B">
 
@@ -20,7 +20,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bloom Reimagined">
     <meta property="og:title" content="Bloom Reimagined | Transition Coaching in Colorado Springs">
-    <meta property="og:description" content="Honest transition coaching from Yvonne Padilla, a retired school principal in Colorado Springs. Start with a 45-minute Root Session for $185.">
+    <meta property="og:description" content="Transition coaching from Yvonne Padilla in Colorado Springs for career changers, veterans, retirees, and empty nesters. Start with a 45-minute Root Session.">
     <meta property="og:url" content="https://bloomreimagined.com/">
     <meta property="og:image" content="https://bloomreimagined.com/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
     <meta property="og:image:alt" content="Bloom Reimagined logo on ink, with the words Transition coaching, Colorado Springs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bloom Reimagined | Transition Coaching in Colorado Springs">
-    <meta name="twitter:description" content="Honest transition coaching from Yvonne Padilla, a retired school principal in Colorado Springs. Start with a 45-minute Root Session for $185.">
+    <meta name="twitter:description" content="Transition coaching from Yvonne Padilla in Colorado Springs for career changers, veterans, retirees, and empty nesters. Start with a 45-minute Root Session.">
     <meta name="twitter:image" content="https://bloomreimagined.com/og-image.png">
     <meta name="twitter:image:alt" content="Bloom Reimagined logo on ink, with the words Transition coaching, Colorado Springs">
 
@@ -45,7 +45,7 @@
         "url": "https://bloomreimagined.com/",
         "image": "https://bloomreimagined.com/images/yvonne-padilla-720.webp",
         "logo": "https://bloomreimagined.com/icon-512.png",
-        "description": "Honest transition coaching from Yvonne Padilla, a retired school principal in Colorado Springs. Start with a 45-minute Root Session for $185.",
+        "description": "Transition coaching from Yvonne Padilla in Colorado Springs for career changers, veterans, retirees, and empty nesters. Start with a 45-minute Root Session.",
         "email": "coach@bloomreimagined.com",
         "address": {
             "@type": "PostalAddress",
@@ -64,7 +64,6 @@
             }
         ],
         "sameAs": [
-            "https://www.instagram.com/bloomreimagined",
             "https://www.linkedin.com/in/yvonne-padilla-94847137/"
         ],
         "founder": {
@@ -111,62 +110,38 @@
             src: url('fonts/atkinson-hyperlegible-next-700.woff2') format('woff2');
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Brand palette: four colors only. Pure white is used only for the form and the boundary note. */
         :root {
-            /* Brand palette: four colors only */
             --ink: #22252B;
-            --snow: #F3EFE7;
+            --snow: #F1F3F4;
             --violet: #5E4B7A;
-            --chartreuse: #C3D545;
-            /* Pure white is used only inside form fields */
-            --field: #FFFFFF;
-
-            --font-head: 'Archivo', 'Arial Narrow', Arial, sans-serif;
-            --font-body: 'Atkinson Hyperlegible Next', Verdana, Arial, sans-serif;
+            --chart: #C3D545;
+            --white: #FFFFFF;
+            --head: 'Archivo', 'Arial Black', sans-serif;
+            --body: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', Verdana, sans-serif;
+            --wrap: 1120px;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body { font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--snow); }
+        img { max-width: 100%; display: block; }
+        a { color: var(--violet); text-underline-offset: 3px; }
+        h1, h2, h3 { font-family: var(--head); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem; }
+        h3 { font-size: 1.35rem; letter-spacing: -0.01em; }
+        p + p { margin-top: 1rem; }
+        .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: clamp(4rem, 9vw, 7rem) 0; }
 
-        body {
-            font-family: var(--font-body);
-            font-weight: 400;
-            background: var(--snow);
-            color: var(--ink);
-            line-height: 1.6;
-        }
+        /* Focus: violet on snow, chartreuse on ink and violet */
+        :focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+        .on-ink :focus-visible, .on-ink:focus-visible { outline-color: var(--chart); }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-head);
-            font-weight: 800;
-            line-height: 1.15;
-            color: var(--ink);
-        }
-
-        a {
-            color: var(--violet);
-        }
-
-        /* ========================================
-           ACCESSIBILITY UTILITIES
-           ======================================== */
         .sr-only {
             position: absolute !important;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
             white-space: nowrap;
@@ -175,1323 +150,461 @@
 
         .skip-link {
             position: absolute;
-            left: 16px;
-            top: 8px;
+            left: 16px; top: 8px;
             padding: 10px 14px;
-            background: var(--chartreuse);
+            background: var(--chart);
             color: var(--ink);
-            text-decoration: underline;
             font-weight: 700;
             transform: translateY(-200%);
-            transition: transform 0.2s ease;
-            z-index: 2000;
+            z-index: 100;
+        }
+        .skip-link:focus { transform: translateY(0); outline-color: var(--ink); }
+
+        /* Buttons: ink text on chartreuse, or snow on ink in the chartreuse band */
+        .btn { display: inline-block; font-family: var(--body); font-weight: 700; font-size: 1.05rem; padding: .95rem 1.6rem; border-radius: 6px; text-decoration: none; border: 2px solid var(--ink); cursor: pointer; }
+        .btn-chart { background: var(--chart); color: var(--ink); border-color: var(--chart); }
+        .btn-chart:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+        .on-snow .btn-chart { border-color: var(--ink); }
+        .btn-ink { background: var(--ink); color: var(--snow); }
+        .btn-ink:hover { text-decoration: underline; }
+        .btn:disabled { opacity: .7; cursor: wait; }
+
+        /* Nav */
+        .nav { background: var(--ink); color: var(--snow); position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(241, 243, 244, .12); }
+        .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 1.5rem; }
+        .brand { display: flex; align-items: center; gap: .8rem; color: var(--snow); text-decoration: none; }
+        .brand img { width: 56px; height: 56px; }
+        .brand span { font-family: var(--head); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.01em; }
+        .menu { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+        .menu a { color: var(--snow); text-decoration: none; font-size: .98rem; padding: .35rem 0; border-bottom: 3px solid transparent; }
+        .menu a:hover { border-bottom-color: var(--chart); }
+        .menu .contact-link { background: var(--violet); padding: .55rem 1rem; border-radius: 6px; border: none; }
+        .menu .contact-link:hover { text-decoration: underline; text-decoration-color: var(--chart); text-decoration-thickness: 2px; }
+        .menu-btn { display: none; align-items: center; gap: .6rem; background: none; border: 2px solid var(--snow); color: var(--snow); font: 700 .95rem var(--body); padding: .5rem .8rem; border-radius: 6px; cursor: pointer; }
+        .bars, .bars::before, .bars::after { display: block; width: 18px; height: 2px; background: var(--snow); position: relative; }
+        .bars::before, .bars::after { content: ""; position: absolute; left: 0; }
+        .bars::before { top: -6px; }
+        .bars::after { top: 6px; }
+        .menu-btn[aria-expanded="true"] .bars { background: transparent; }
+        .menu-btn[aria-expanded="true"] .bars::before { top: 0; transform: rotate(45deg); }
+        .menu-btn[aria-expanded="true"] .bars::after { top: 0; transform: rotate(-45deg); }
+
+        /* Hero */
+        .hero { background: var(--ink); color: var(--snow); padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(4rem, 8vw, 6.5rem); }
+        .hero .wrap { display: grid; grid-template-columns: 1.25fr .85fr; gap: 3rem; align-items: center; }
+        .hero h1 { font-size: clamp(2.5rem, 5.6vw, 4.4rem); margin-bottom: 1.5rem; }
+        .hero p.lede { font-size: 1.15rem; max-width: 36rem; color: var(--snow); }
+        .hero .price { color: var(--chart); font-weight: 700; font-size: 1.1rem; margin: 1.75rem 0 1.25rem; }
+        .portrait { position: relative; justify-self: center; width: min(380px, 100%); }
+        .portrait .ring { border: 5px solid var(--chart); border-radius: 50%; padding: 10px; }
+        .portrait .ring img { border-radius: 50%; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+        .portrait .stamp { position: absolute; left: -28px; bottom: -14px; width: 132px; height: 132px; border-radius: 50%; box-shadow: 0 0 0 6px var(--ink); }
+
+        /* Philosophy */
+        .phil .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3.5rem; align-items: start; }
+        .phil p { max-width: 34rem; }
+        .story { background: var(--violet); color: var(--snow); padding: 2.25rem; border-radius: 10px; border-top: 8px solid var(--chart); }
+        .story h3 { color: var(--chart); margin-bottom: .9rem; }
+
+        /* Beliefs */
+        .beliefs { background: var(--ink); color: var(--snow); }
+        .beliefs h2 { font-size: 1.4rem; letter-spacing: 0; margin-bottom: 2rem; color: var(--chart); }
+        .beliefs ul { list-style: none; display: grid; gap: 1.6rem; }
+        .beliefs li { font-family: var(--head); font-size: clamp(1.6rem, 3.4vw, 2.6rem); line-height: 1.12; letter-spacing: -0.02em; padding-left: 1.4rem; border-left: 6px solid var(--chart); max-width: 46rem; }
+
+        /* Who I help */
+        .who .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; }
+        .who .lead { font-family: var(--head); font-size: 1.6rem; line-height: 1.15; margin-bottom: 1.2rem; }
+        .who p { max-width: 36rem; }
+        .who h3 { margin-bottom: 1rem; }
+        .conds { list-style: none; border-top: 2px solid var(--ink); }
+        .conds li { padding: .75rem 0 .75rem 1.9rem; border-bottom: 1px solid rgba(34, 37, 43, .35); position: relative; }
+        .conds li::before { content: ""; position: absolute; left: 0; top: 1.1rem; width: 13px; height: 13px; background: var(--violet); border-radius: 50%; }
+        .boundary { grid-column: 1 / -1; background: var(--white); border: 2px solid var(--ink); border-left: 10px solid var(--violet); padding: 1.5rem 1.75rem; border-radius: 6px; max-width: 52rem; }
+        .boundary strong { color: var(--violet); }
+
+        /* BLOOM band */
+        .bloom { background: var(--violet); color: var(--snow); padding-bottom: clamp(3rem, 6vw, 5rem); }
+        .bloom .intro { max-width: 40rem; margin-bottom: 2rem; }
+        .bloom-art { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .bloom-art img { width: 100%; height: auto; }
+        .steps { display: grid; grid-template-columns: 19fr 18fr 18fr 18fr 20fr 7fr; margin-top: .5rem; list-style: none; }
+        .steps li { text-align: center; padding: 0 .5rem; }
+        .steps .l { font-family: var(--head); font-size: clamp(2.2rem, 4vw, 3.4rem); color: var(--chart); line-height: 1; }
+        .steps .w { font-weight: 700; font-size: 1.1rem; margin-top: .3rem; }
+        .steps .q { font-size: .95rem; margin-top: .35rem; }
+        .steps-list { list-style: none; margin-top: 2rem; }
+        .steps-list li { padding: .9rem 0; border-top: 1px solid rgba(241, 243, 244, .35); }
+        .steps-list b { font-family: var(--head); color: var(--chart); font-size: 1.3rem; margin-right: .5rem; }
+
+        /* Work with me */
+        .work .intro { max-width: 38rem; margin-bottom: 2.5rem; }
+        .offers { list-style: none; display: grid; gap: 0; }
+        .offer { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 2px solid var(--ink); }
+        .offer .meta { font-weight: 700; margin-top: .4rem; color: var(--violet); }
+        .offer.root { background: var(--ink); color: var(--snow); padding: 2.25rem 2rem; border-radius: 10px; border-bottom: none; margin: 0 0 .5rem; }
+        .offer.root .meta { color: var(--chart); font-size: 1.15rem; }
+        .offer p { max-width: 40rem; }
+        .sides { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0 1rem; }
+        .sides h3 { color: var(--violet); margin-bottom: .5rem; }
+        .both { font-weight: 700; font-size: 1.15rem; margin-bottom: 2rem; }
+
+        /* About */
+        .about { background: var(--ink); color: var(--snow); }
+        .about .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3.5rem; align-items: start; }
+        .about blockquote { font-family: var(--head); font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.1; letter-spacing: -0.02em; border-top: 8px solid var(--chart); padding-top: 1.5rem; }
+        .about h2 { font-size: 2rem; }
+        .about a { color: var(--snow); }
+
+        /* CTA band */
+        .cta { background: var(--chart); color: var(--ink); padding: clamp(3rem, 6vw, 4.5rem) 0; }
+        .cta .wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+        .cta h2 { margin-bottom: .4rem; }
+        .cta p { font-size: 1.15rem; }
+        .cta :focus-visible { outline-color: var(--ink); }
+
+        /* Contact */
+        .contact .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3.5rem; align-items: start; }
+        .contact .lead { font-size: 1.15rem; margin-bottom: 1rem; }
+        form { background: var(--white); border: 2px solid var(--ink); border-top: 10px solid var(--violet); border-radius: 10px; padding: 2rem; }
+        label { display: block; font-weight: 700; margin: 1.1rem 0 .4rem; }
+        label:first-of-type { margin-top: 0; }
+        label span { font-weight: 400; }
+        input, textarea { width: 100%; font: inherit; padding: .75rem .85rem; border: 2px solid var(--ink); border-radius: 6px; background: var(--white); color: var(--ink); }
+        textarea { min-height: 140px; resize: vertical; }
+        form .btn { width: 100%; margin-top: 1.5rem; }
+        .note { font-size: .95rem; margin-top: .9rem; }
+        .form-error { font-weight: 700; margin-top: 1.25rem; }
+        .form-error:not([hidden]) + .btn { margin-top: 1rem; }
+        .form-error a { color: inherit; }
+        .honeypot { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .thanks { background: var(--white); border: 2px solid var(--ink); border-left: 10px solid var(--chart); border-radius: 10px; padding: 2rem; }
+        .thanks[hidden] { display: none; }
+        .thanks:focus { outline: none; }
+        .thanks h3 { margin-bottom: .75rem; }
+        .social { display: flex; gap: 1.25rem; margin-top: 1.5rem; }
+
+        /* Footer */
+        footer { background: var(--ink); color: var(--snow); padding: 4rem 0 2.5rem; border-top: 10px solid var(--violet); }
+        footer .top { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(241, 243, 244, .25); }
+        footer .brand img { width: 64px; height: 64px; }
+        footer a { color: var(--snow); }
+        footer ul { list-style: none; display: grid; gap: .5rem; }
+        footer .cols { display: flex; gap: 3rem; }
+        footer .h { font-weight: 700; margin-bottom: .6rem; }
+        footer .bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; font-size: .95rem; }
+        footer .results { max-width: 34rem; margin-top: 1.25rem; font-size: .95rem; }
+
+        /* Steps list: visible on phones, read by screen readers at every width */
+        @media (min-width: 601px) {
+            .steps-list {
+                position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+                overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+            }
         }
 
-        .skip-link:focus {
-            transform: translateY(0);
+        @media (max-width: 960px) {
+            .menu-btn { display: inline-flex; }
+            .menu { display: none; position: absolute; left: 0; right: 0; top: 84px; flex-direction: column; align-items: stretch; gap: 0; background: var(--violet); padding: .5rem 1.5rem 1.5rem; border-bottom: 6px solid var(--chart); }
+            .menu.open { display: flex; }
+            .menu a { display: block; font-size: 1.15rem; padding: .9rem 0; border-bottom: 1px solid rgba(241, 243, 244, .3); }
+            .menu a:hover { border-bottom-color: rgba(241, 243, 244, .3); text-decoration: underline; text-decoration-color: var(--chart); }
+            .menu .contact-link { background: none; padding: .9rem 0; border-radius: 0; border-bottom: none; }
         }
-
-        /* Focus: ink outline on snow, snow outline on ink (both 13.39:1) */
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        textarea:focus-visible {
-            outline: 3px solid var(--ink);
-            outline-offset: 3px;
+        @media (max-width: 860px) {
+            .hero .wrap, .phil .wrap, .who .wrap, .about .wrap, .contact .wrap { grid-template-columns: 1fr; }
+            .portrait { order: -1; width: 170px; justify-self: start; }
+            .portrait .ring { border-width: 4px; padding: 6px; }
+            .portrait .stamp { width: 64px; height: 64px; left: -10px; bottom: -6px; box-shadow: 0 0 0 4px var(--ink); }
+            .hero .wrap { gap: 1.75rem; }
+            .offer { grid-template-columns: 1fr; gap: .75rem; }
+            .sides { grid-template-columns: 1fr; }
         }
-
-        .nav :focus-visible,
-        .hero :focus-visible,
-        .footer :focus-visible {
-            outline-color: var(--snow);
+        @media (max-width: 600px) {
+            .brand span { font-size: 1rem; white-space: nowrap; }
+            .menu-btn { padding: .45rem .65rem; }
+            .brand img { width: 46px; height: 46px; }
+            .steps .w, .steps .q { display: none; }
+            .bloom-art { padding: 0 .75rem; }
         }
-
-        section[id] {
-            scroll-margin-top: 90px;
-        }
-
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            *, *::before, *::after {
-                transition: none !important;
-                animation: none !important;
-            }
-            a:hover, button:hover {
-                transform: none !important;
-                box-shadow: none !important;
-            }
-        }
-
-        /* ========================================
-           BUTTONS (chartreuse, always ink text)
-           ======================================== */
-        .btn,
-        .nav__cta,
-        .hero__cta,
-        .work-with-me__cta,
-        .contact-form__button {
-            display: inline-block;
-            background: var(--chartreuse);
-            color: var(--ink);
-            border: 2px solid var(--chartreuse);
-            border-radius: 6px;
-            padding: 14px 28px;
-            font-family: var(--font-body);
-            font-weight: 700;
-            font-size: 1.05rem;
-            line-height: 1.2;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* On snow, buttons get an ink edge so the shape holds 13.39:1 */
-        .work-with-me__cta,
-        .contact-form__button {
-            border-color: var(--ink);
-        }
-
-        /* Hover keeps ink on chartreuse; show it with an underline */
-        .btn:hover,
-        .nav__cta:hover,
-        .hero__cta:hover,
-        .work-with-me__cta:hover,
-        .contact-form__button:hover,
-        .nav__links-cta a:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
-        }
-
-        /* ========================================
-           NAVIGATION (solid ink)
-           ======================================== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--ink);
-            z-index: 1000;
-            padding: 10px 24px;
-        }
-
-        .nav__inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav__logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .nav__logo img {
-            height: 48px;
-            width: 48px;
-            display: block;
-        }
-
-        .nav__links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav__links a {
-            text-decoration: none;
-            color: var(--snow);
-            font-size: 1rem;
-        }
-
-        .nav__links a:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .nav__links-cta {
-            display: none;
-        }
-
-        .nav__cta {
-            padding: 10px 20px;
-            font-size: 0.95rem;
-        }
-
-        /* Hamburger Menu */
-        .nav__hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 44px;
-            height: 44px;
-            padding: 13px 9px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .nav__hamburger-line {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: var(--snow);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .nav__hamburger.active .nav__hamburger-line:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .nav__hamburger.active .nav__hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav__hamburger.active .nav__hamburger-line:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                padding: 10px 16px;
-            }
-
-            .nav__hamburger {
-                display: flex;
-            }
-
-            .nav__links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--ink);
-                border-left: 2px solid var(--snow);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 28px;
-                transition: right 0.3s ease, visibility 0.3s;
-                visibility: hidden;
-                z-index: 1000;
-            }
-
-            .nav__links.active {
-                right: 0;
-                visibility: visible;
-            }
-
-            .nav__links a {
-                font-size: 1.15rem;
-            }
-
-            .nav__links-cta {
-                display: block;
-                margin-top: 12px;
-            }
-
-            .nav__links-cta a {
-                display: inline-block;
-                background: var(--chartreuse);
-                color: var(--ink);
-                padding: 12px 24px;
-                border-radius: 6px;
-                font-weight: 700;
-            }
-
-            .nav__cta {
-                display: none;
-            }
-        }
-
-        /* ========================================
-           HERO (flat ink, text left, headshot right)
-           ======================================== */
-        .hero {
-            background: var(--ink);
-            color: var(--snow);
-            padding: 136px 24px 96px;
-        }
-
-        .hero__inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            grid-template-areas: "content photo";
-            align-items: center;
-            gap: 64px;
-        }
-
-        .hero__photo {
-            grid-area: photo;
-        }
-
-        .hero__photo img {
-            display: block;
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            border: 3px solid var(--chartreuse);
-            padding: 6px;
-            background: var(--ink);
-        }
-
-        .hero__content {
-            grid-area: content;
-            max-width: 640px;
-        }
-
-        .hero__title {
-            color: var(--snow);
-            font-size: clamp(2rem, 4.4vw, 3.4rem);
-            line-height: 1.08;
-            letter-spacing: -0.01em;
-            margin-bottom: 24px;
-        }
-
-        .hero__body {
-            font-size: 1.15rem;
-            line-height: 1.65;
-            margin-bottom: 24px;
-        }
-
-        .hero__cost {
-            color: var(--chartreuse);
-            font-weight: 700;
-            font-size: 1.15rem;
-            margin-bottom: 28px;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 88px 16px 64px;
-            }
-
-            .hero__inner {
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "photo"
-                    "content";
-                gap: 20px;
-            }
-
-            .hero__photo img {
-                width: 160px;
-                height: 160px;
-                border-width: 3px;
-                padding: 4px;
-            }
-
-            .hero__title {
-                font-size: 1.85rem;
-                margin-bottom: 16px;
-            }
-
-            .hero__body {
-                font-size: 1.05rem;
-            }
-        }
-
-        /* ========================================
-           SHARED SECTION TYPE
-           ======================================== */
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 32px;
-        }
-
-        /* ========================================
-           ABOUT / PHILOSOPHY
-           ======================================== */
-        .about {
-            padding: 96px 24px;
-        }
-
-        .about__inner {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about__grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .about__text p {
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-            line-height: 1.75;
-        }
-
-        .about__text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .about__philosophy {
-            padding: 4px 0 4px 28px;
-            border-left: 4px solid var(--violet);
-        }
-
-        .about__philosophy-title {
-            font-size: 1.35rem;
-            margin-bottom: 16px;
-        }
-
-        .about__philosophy p {
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .about__philosophy p + p {
-            margin-top: 16px;
-        }
-
-        /* Core Beliefs: flat snow, plain lines */
-        .about__beliefs {
-            margin-top: 72px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .about__beliefs-title {
-            font-size: 1.6rem;
-            margin-bottom: 16px;
-        }
-
-        .beliefs-list {
-            list-style: none;
-        }
-
-        .beliefs-list li {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--ink);
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-
-        .beliefs-list li:first-child {
-            border-top: 1px solid var(--ink);
-        }
-
-        /* Who I Help */
-        .about__audiences {
-            margin-top: 72px;
-            text-align: center;
-        }
-
-        .about__audiences-title {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-
-        .about__audiences-intro {
-            font-family: var(--font-head);
-            font-weight: 800;
-            font-size: 1.3rem;
-            margin: 0 auto 16px;
-            max-width: 600px;
-        }
-
-        .about__audiences-subtext {
-            font-size: 1.05rem;
-            margin: 0 auto 24px;
-            max-width: 35rem;
-        }
-
-        .about__audiences-subtext--strong {
-            font-weight: 700;
-        }
-
-        .about__audiences-note {
-            font-size: 0.95rem;
-        }
-
-        .audience-list {
-            list-style: none;
-            max-width: 420px;
-            margin: 0 auto 24px;
-            text-align: left;
-        }
-
-        .audience-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--ink);
-            font-size: 1rem;
-        }
-
-        .audience-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* ========================================
-           FRAMEWORK
-           ======================================== */
-        .framework {
-            padding: 80px 24px;
-            border-top: 1px solid var(--ink);
-        }
-
-        .framework__inner {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .framework__header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .framework__header .section-title {
-            margin-bottom: 0;
-        }
-
-        .framework__image {
-            text-align: center;
-        }
-
-        .framework__image img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* ========================================
-           WORK WITH ME
-           ======================================== */
-        .work-with-me {
-            padding: 96px 24px;
-            border-top: 1px solid var(--ink);
-        }
-
-        .work-with-me__inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .work-with-me__header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .work-with-me__content {
-            text-align: center;
-        }
-
-        .work-with-me__content > p {
-            font-size: 1.1rem;
-            line-height: 1.75;
-            margin: 0 auto 24px;
-            max-width: 700px;
-        }
-
-        .work-with-me__options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-            margin: 48px 0;
-            list-style: none;
-        }
-
-        .offer {
-            border: 2px solid var(--ink);
-            border-radius: 6px;
-            padding: 28px 24px;
-            text-align: left;
-        }
-
-        .offer__name {
-            font-size: 1.3rem;
-            margin-bottom: 4px;
-        }
-
-        .offer__meta {
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .offer p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .work-with-me__cta-text {
-            font-size: 1.15rem;
-            margin: 40px 0 24px;
-        }
-
-        /* ========================================
-           MEET YOUR COACH
-           ======================================== */
-        .meet-coach {
-            padding: 96px 24px;
-            border-top: 1px solid var(--ink);
-        }
-
-        .meet-coach__inner {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .meet-coach__content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .meet-coach__image {
-            flex-shrink: 0;
-        }
-
-        .meet-coach__image img {
-            display: block;
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .meet-coach__text p {
-            font-size: 1.1rem;
-            line-height: 1.75;
-            margin-bottom: 20px;
-        }
-
-        .meet-coach__text p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .meet-coach__content {
-                flex-direction: column;
-                text-align: left;
-            }
-
-            .meet-coach__image img {
-                width: 220px;
-                height: 220px;
-            }
-        }
-
-        /* ========================================
-           CONTACT
-           ======================================== */
-        .contact {
-            padding: 96px 24px;
-            border-top: 1px solid var(--ink);
-        }
-
-        .contact__inner {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact__text {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-
-        .contact-form {
-            text-align: left;
-            margin-bottom: 32px;
-        }
-
-        .contact-form__group {
-            margin-bottom: 24px;
-        }
-
-        .contact-form__label {
-            display: block;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .contact-form__label .optional,
-        .contact-form__label .required {
-            font-weight: 400;
-        }
-
-        .contact-form__input,
-        .contact-form__textarea {
-            width: 100%;
-            padding: 14px 16px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            border: 2px solid var(--ink);
-            border-radius: 6px;
-            background: var(--field);
-            color: var(--ink);
-        }
-
-        .contact-form__textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form__button {
-            width: 100%;
-        }
-
-        .contact-form__note {
-            margin-top: 16px;
-            font-size: 0.95rem;
-            text-align: center;
-        }
-
-        .contact-form__button:disabled {
-            opacity: 0.7;
-            cursor: wait;
-        }
-
-        .contact-form__error {
-            margin-bottom: 16px;
-            font-size: 1rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .contact-form__error a {
-            color: inherit;
-        }
-
-        .contact-thanks:empty {
-            display: none;
-        }
-
-        .contact-thanks {
-            text-align: center;
-            border: 2px solid var(--ink);
-            border-radius: 6px;
-            padding: 40px;
-            margin-bottom: 32px;
-        }
-
-        .contact-thanks:focus {
-            outline: none;
-        }
-
-        .contact-thanks__title {
-            font-size: 1.6rem;
-            margin-bottom: 16px;
-        }
-
-        .contact-thanks__text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .contact__alt {
-            margin-bottom: 32px;
-            font-size: 1rem;
-        }
-
-        .contact__social {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .contact__social a {
-            width: 44px;
-            height: 44px;
-            background: var(--ink);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--snow);
-            text-decoration: none;
-        }
-
-        /* ========================================
-           COLLECTIVE
-           ======================================== */
-        .collective {
-            padding: 80px 24px;
-            border-top: 1px solid var(--ink);
-            text-align: center;
-        }
-
-        .collective__inner {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .collective__title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .collective__text {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            margin-bottom: 24px;
-        }
-
-        .collective__pills {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin: 24px 0;
-        }
-
-        .collective__pills span {
-            border: 1px solid var(--ink);
-            border-radius: 30px;
-            padding: 8px 18px;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .collective__link {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        /* ========================================
-           FOOTER (solid ink)
-           ======================================== */
-        .footer {
-            background: var(--ink);
-            color: var(--snow);
-            padding: 3.5rem 24px 32px;
-        }
-
-        .footer__inner {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .footer__top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--snow);
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .footer__brand img {
-            height: 64px;
-            width: 64px;
-            display: block;
-        }
-
-        .footer__links {
-            display: flex;
-            gap: 48px;
-        }
-
-        .footer__heading {
-            font-family: var(--font-head);
-            font-weight: 800;
-            font-size: 1rem;
-            margin-bottom: 14px;
-        }
-
-        .footer__link-group ul {
-            list-style: none;
-        }
-
-        .footer__link-group li {
-            margin-bottom: 10px;
-        }
-
-        .footer__link-group a,
-        .footer__legal a {
-            color: var(--snow);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .footer__link-group a:hover,
-        .footer__legal a:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .footer__bottom {
-            padding-top: 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer__copyright {
-            font-size: 0.9rem;
-        }
-
-        .footer__legal {
-            display: flex;
-            gap: 24px;
-        }
-
-        /* ========================================
-           RESPONSIVE
-           ======================================== */
-        @media (max-width: 900px) {
-            .about__grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .footer__top {
-                flex-direction: column;
-            }
-
-            .footer__links {
-                flex-direction: column;
-                gap: 28px;
-            }
-
-            .footer__bottom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
         }
     </style>
 </head>
 <body id="top">
-    <a class="skip-link" href="#main">Skip to main content</a>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav__inner">
-            <a href="#top" class="nav__logo">
-                <img src="images/logo-reversed.svg" alt="Bloom Reimagined home" width="48" height="48">
-            </a>
-            <button class="nav__hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-            </button>
-            <ul class="nav__links" id="primary-navigation">
-                <li><a href="#about">Philosophy</a></li>
-                <li><a href="#framework">Approach</a></li>
-                <li><a href="#about-me">About</a></li>
-                <li><a href="#pricing">Investment</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="nav__links-cta"><a href="#contact">Let's Connect</a></li>
-            </ul>
-            <a href="#contact" class="nav__cta">Let's Connect</a>
-        </div>
-    </nav>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-    <main id="main">
+<nav class="nav on-ink" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/logo-reversed.svg" alt="" width="56" height="56"><span>Bloom Reimagined</span></a>
+    <button class="menu-btn" id="menu-button" type="button" aria-expanded="false" aria-controls="menu"><span class="bars" aria-hidden="true"></span>Menu</button>
+    <ul id="menu" class="menu">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#who">Who I help</a></li>
+      <li><a href="#approach">BLOOM</a></li>
+      <li><a href="#work">Work with me</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="contact-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__inner">
-            <div class="hero__photo">
-                <img src="images/yvonne-padilla-360.webp"
-                     srcset="images/yvonne-padilla-160.webp 160w, images/yvonne-padilla-320.webp 320w, images/yvonne-padilla-360.webp 360w, images/yvonne-padilla-720.webp 720w"
-                     sizes="(max-width: 768px) 160px, 360px"
-                     width="360" height="360" alt="Yvonne Padilla" fetchpriority="high" decoding="async">
-            </div>
-            <div class="hero__content">
-                <h1 class="hero__title" id="hero-title">Coaching for the stretch between what ended and what's next</h1>
-                <p class="hero__body">I'm Yvonne Padilla, a retired school principal in Colorado Springs. I coach men and women through the changes nobody trains you for: leaving the military, changing careers, retiring, and the quiet house after the kids move out. I'll tell you the truth, and I'll stay with you while you act on it.</p>
-                <p class="hero__cost">Start with a 45-minute Root Session, $185.</p>
-                <a href="#contact" class="hero__cta">Request a Root Session</a>
-            </div>
-        </div>
-    </section>
+<main id="main">
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about__inner">
-            <h2 class="section-title">You are built to blossom into more</h2>
-            
-            <div class="about__grid">
-                <div class="about__text">
-                    <p>
-                        Most people aren't built for quick pivots—and that's normal. That's why coaching exists. The ability to navigate change can be learned and developed.
-                    </p>
-                    <p>
-                        My approach integrates insights from leading researchers—Angela Duckworth's work on grit, James Clear on habits, Brené Brown on resilience, Stephen Covey's principles, and the latest neuroplasticity science—into a practical framework that meets you exactly where you are.
-                    </p>
-                    <p>
-                        You have everything you need—you just need someone who'll tell you the truth and walk beside you while you prove it to yourself.
-                    </p>
-                </div>
-                <div class="about__philosophy">
-                    <h3 class="about__philosophy-title">The Kintsugi Philosophy</h3>
-                    <p>
-                        The Japanese art of Kintsugi repairs broken pottery with gold, making the cracks visible and beautiful rather than hiding them. Someone who has been broken and healed can become more beautiful and more lovable than ever before.
-                    </p>
-                    <p>
-                        We are each other's wounded healers. Your story—your transitions, your struggles, your growth—is your credential. The gold is already in you.
-                    </p>
-                </div>
-            </div>
+<header class="hero on-ink">
+  <div class="wrap">
+    <div>
+      <h1>Coaching for the stretch between what ended and what's next</h1>
+      <p class="lede">I'm Yvonne Padilla, a retired school principal in Colorado Springs. I coach men and women through the changes nobody trains you for: leaving the military, changing careers, retiring, and the quiet house after the kids move out. I'm honest with you, kind about it, and in your corner while you find what's next.</p>
+      <p class="price">Start with a 45-minute Root Session.</p>
+      <a class="btn btn-chart" href="#contact">Request a Root Session</a>
+    </div>
+    <div class="portrait">
+      <div class="ring"><img src="images/yvonne-padilla-360.webp"
+           srcset="images/yvonne-padilla-160.webp 160w, images/yvonne-padilla-320.webp 320w, images/yvonne-padilla-360.webp 360w, images/yvonne-padilla-720.webp 720w"
+           sizes="(max-width: 860px) 150px, 340px"
+           alt="Yvonne Padilla" width="360" height="360" fetchpriority="high" decoding="async"></div>
+      <img class="stamp" src="images/logo-reversed.svg" alt="" width="132" height="132">
+    </div>
+  </div>
+</header>
 
-            <div class="about__beliefs">
-                <h3 class="about__beliefs-title">What I Believe</h3>
-                <ul class="beliefs-list">
-                    <li>Your strongest bloom is still ahead of you.</li>
-                    <li>Transition is evolution, not failure.</li>
-                    <li>No excuses, just choices.</li>
-                    <li>You are built not to shrink down to less but to blossom into more.</li>
-                </ul>
-            </div>
+<section class="phil on-snow" id="philosophy">
+  <div class="wrap">
+    <div>
+      <h2>Change is a skill. You can get better at it.</h2>
+      <p>Most people aren't built for quick pivots, and that's normal. Handling change well can be learned.</p>
+      <p>You likely have what you need. What's often missing is someone in your corner who listens closely and tells you the truth with care.</p>
+      <p>Coaching can also bring back the joy and wonder a hard season takes out of life. Together we prioritize what matters most, take an honest look at where you are, and discover your next season.</p>
+    </div>
+    <aside class="story">
+      <h3>The pasqueflower</h3>
+      <p>It blooms in the Colorado foothills in early spring, often through late snow, before conditions look ready. You won't feel ready either. Start anyway.</p>
+    </aside>
+  </div>
+</section>
 
-            <!-- Who I Help -->
-            <div class="about__audiences">
-                <h3 class="about__audiences-title">Who I Help</h3>
-                <p class="about__audiences-intro">
-                    She's not broken. She's just stuck.
-                </p>
-                <p class="about__audiences-subtext">
-                    Maybe she's 25 and trying to figure out who she is apart from everyone else's story for her. Maybe she's 45 and the kids are gone, the career feels empty, and there's a question she's been afraid to say out loud: <em>is this it?</em> Maybe she's 55 and just walked away from something she gave everything to — and has no idea what's supposed to come next.
-                </p>
-                <p class="about__audiences-subtext">
-                    Age doesn't define her. Her moment does.
-                </p>
-                <p class="about__audiences-subtext">
-                    She's smart. She's capable. She's probably the one everyone else calls when they need advice. But right now she can't find her own footing — and she's tired of pretending she's fine.
-                </p>
-                <p class="about__audiences-subtext">
-                    She doesn't need a cheerleader. She doesn't need someone to tell her she's amazing and it'll all work out. She needs someone who will look her situation straight in the eye, say the thing nobody else will say, and still be standing there when it's hard.
-                </p>
-                <p class="about__audiences-subtext about__audiences-subtext--strong">
-                    That's the work I do.
-                </p>
-                <p class="about__audiences-subtext about__audiences-subtext--strong">
-                    If any of this is you, let's talk:
-                </p>
-                <ul class="audience-list">
-                    <li>→ Career change or job loss</li>
-                    <li>→ Empty nest or shifting family dynamics</li>
-                    <li>→ Parenting adult children</li>
-                    <li>→ Divorce or relationship transition</li>
-                    <li>→ Retirement or leaving a long-held role</li>
-                    <li>→ Loss of identity, purpose, or direction</li>
-                    <li>→ Graduation and the "what now" that follows</li>
-                    <li>→ Knowing something has to change — but not knowing what</li>
-                </ul>
-                <p class="about__audiences-subtext">
-                    You don't have to have it figured out to reach out. You just have to be ready to stop pretending you're fine.
-                </p>
-                <p class="about__audiences-subtext about__audiences-note">
-                    <strong>One thing worth knowing:</strong> Bloom Reimagined is coaching, not therapy. I work with women who are ready to move forward and need someone honest in their corner. If what you're carrying requires clinical support, I'll tell you that too — and point you toward someone who can actually help.
-                </p>
-            </div>
-        </div>
-    </section>
+<section class="beliefs on-ink">
+  <div class="wrap">
+    <h2>What I believe</h2>
+    <ul>
+      <li>Your strongest years can still be ahead of you.</li>
+      <li>Leaving something you gave everything to takes more nerve than staying.</li>
+      <li>You always have a choice. Some of them are hard.</li>
+    </ul>
+  </div>
+</section>
 
-    <!-- Framework Section -->
-    <section class="framework" id="framework">
-        <div class="framework__inner">
-            <header class="framework__header">
-                <h2 class="section-title">My Approach</h2>
-            </header>
+<section class="who on-snow" id="who">
+  <div class="wrap">
+    <div>
+      <h2>Who I work with</h2>
+      <p class="lead">Smart, capable, and stuck.</p>
+      <p>Maybe you just took off the uniform after twenty years, and civilian work feels like a foreign language. Maybe the kids are gone, the job feels empty, and you've started asking yourself, quietly, whether this is it. Maybe you walked away from something you gave everything to and have no idea what comes next.</p>
+      <p>You're probably the one everyone else calls for advice. Right now you can't find your own footing, and you're tired of pretending you're fine.</p>
+      <p>You don't need a cheerleader, and you don't need a lecture. You need someone who listens closely, is honest with you, and is kind about it.</p>
+    </div>
+    <div>
+      <h3>If any of these fit, let's talk</h3>
+      <ul class="conds">
+        <li>Career change or job loss</li>
+        <li>Leaving the military for civilian work</li>
+        <li>Retirement or leaving a long-held role</li>
+        <li>Empty nest or shifting family roles</li>
+        <li>Parenting adult children</li>
+        <li>Divorce or the end of a relationship</li>
+        <li>Graduation and the "what now" after it</li>
+        <li>Losing your sense of identity, purpose, or direction</li>
+        <li>Knowing something has to change, without knowing what</li>
+      </ul>
+    </div>
+    <p class="boundary"><strong>One thing worth knowing:</strong> this is coaching, not therapy. If something from the past comes up, I'll acknowledge it, then bring us back to what you're deciding now. If what you're carrying needs more than coaching, I'll say so and help you find the right person.</p>
+  </div>
+</section>
 
-            <div class="framework__image">
-                <img src="images/bloom-framework-700.webp" srcset="images/bloom-framework-700.webp 700w, images/bloom-framework-1200.webp 1200w" sizes="(max-width: 748px) calc(100vw - 48px), 700px" width="700" height="875" alt="The BLOOM Framework - A Framework for Transformation: Believe (Do you believe this is possible for you?), Listen (What is your inner voice telling you?), Observe (What pattern are you noticing?), Own (What's your role in this?), Move (What's your next right action?)" loading="lazy" decoding="async">
-            </div>
-        </div>
-    </section>
+<section class="bloom on-ink" id="approach">
+  <div class="wrap"><div class="intro">
+    <h2>The BLOOM framework</h2>
+    <p>Five steps I use with every client. We take them at your pace, and some take longer than others.</p>
+  </div></div>
+  <div class="bloom-art">
+    <img src="images/bloom-framework-1086.webp"
+         srcset="images/bloom-framework-1086.webp 1086w, images/bloom-framework-2172.webp 2172w"
+         sizes="(max-width: 1200px) calc(100vw - 48px), 1152px"
+         alt="Five stages of a pasqueflower, from a seed under the snow to full bloom." width="1086" height="362" loading="lazy" decoding="async">
+    <ol class="steps" aria-hidden="true">
+      <li><div class="l">B</div><div class="w">Believe</div><div class="q">Do you believe this is possible for you?</div></li>
+      <li><div class="l">L</div><div class="w">Listen</div><div class="q">What is your inner voice telling you?</div></li>
+      <li><div class="l">O</div><div class="w">Observe</div><div class="q">What pattern are you noticing?</div></li>
+      <li><div class="l">O</div><div class="w">Own</div><div class="q">What's your role in this?</div></li>
+      <li><div class="l">M</div><div class="w">Move</div><div class="q">What's your next right action?</div></li>
+      <li></li>
+    </ol>
+    <ol class="steps-list">
+      <li><b>B</b><strong>Believe.</strong> Do you believe this is possible for you?</li>
+      <li><b>L</b><strong>Listen.</strong> What is your inner voice telling you?</li>
+      <li><b>O</b><strong>Observe.</strong> What pattern are you noticing?</li>
+      <li><b>O</b><strong>Own.</strong> What's your role in this?</li>
+      <li><b>M</b><strong>Move.</strong> What's your next right action?</li>
+    </ol>
+  </div>
+</section>
 
-    <!-- Work With Me Section -->
-    <section class="work-with-me" id="pricing">
-        <div class="work-with-me__inner">
-            <header class="work-with-me__header">
-                <h2 class="section-title">Your Investment in Transformation</h2>
-            </header>
+<section class="work on-snow" id="work">
+  <div class="wrap">
+    <h2>Ways to work with me</h2>
+    <p class="intro">Every person comes to coaching with different needs, so the time and investment are different too. Instead of a price list, we build a plan together after your Root Session.</p>
+    <ul class="offers">
+      <li class="offer root on-ink">
+        <div><h3>Root Session</h3><p class="meta">45 minutes, $185</p></div>
+        <p>Most people who feel stuck already know something has to change. What they can't see is what's holding them in place. In a Root Session, we find it. We look at what ended, what you want next, and what's keeping you from moving: habits, money, fear, other people's expectations, or a story you've told yourself for years. You leave knowing what's in the way and your first move. You'll also know whether I'm the right coach for you.</p>
+      </li>
+      <!-- working name -->
+      <li class="offer">
+        <div><h3>Monthly Accountability</h3><p class="meta">One session a month</p></div>
+        <p>For people who want someone holding them to what they said they'd do.</p>
+      </li>
+      <!-- working name -->
+      <li class="offer">
+        <div><h3>Three-Month Program</h3><p class="meta">Regular sessions</p></div>
+        <p>Built around where you are. Most people need about three months; some need longer, and we'll decide together.</p>
+      </li>
+    </ul>
+    <div class="sides">
+      <div><h3>My side</h3><p>I'll tell you the truth and show up prepared every time.</p></div>
+      <div><h3>Your side</h3><p>Come prepared and do what you said you'd do.</p></div>
+    </div>
+    <p class="both">Results depend on both.</p>
+    <a class="btn btn-chart" href="#contact">Request a Root Session</a>
+  </div>
+</section>
 
-            <div class="work-with-me__content">
-                <p>Transformation is deeply personal, and so is the coaching relationship. Before we discuss investment, I want to understand where you are, where you want to go, and whether we're the right fit to walk that path together.</p>
-                
-                <p>I offer a <strong>Root Session</strong>—a focused conversation where we'll explore your current situation, clarify your goals, and determine if my approach aligns with what you need. This isn't a sales call; it's a real conversation about your transformation.</p>
+<section class="about on-ink" id="about">
+  <div class="wrap">
+    <blockquote>Honesty and kindness belong in the same conversation.</blockquote>
+    <div>
+      <h2>Yvonne Padilla</h2>
+      <p>I spent 26 years as an educator, including 17 as founding principal of a school I helped build. Then I walked away to figure out what came next. I know what it's like to stand at the edge of something you've closed, with no idea what the next part looks like.</p>
+      <p>My whole career has been helping people through change: students, parents, teachers, and families. Some of those conversations were hard. I had them with care, because the relationship always mattered more to me than being right.</p>
+      <p>Relationships still come first. I want you to leave every session feeling respected, heard, and clearer about your next step. BLOOM grew out of years across the table from families making hard decisions.</p>
+    </div>
+  </div>
+</section>
 
-                <p>Your first step is a <strong>$185 Root Session</strong>. Everything else we figure out together.</p>
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <h2>Start with one conversation.</h2>
+      <p>45 minutes, and you leave knowing your first move.</p>
+    </div>
+    <a class="btn btn-ink" href="#contact">Request a Root Session</a>
+  </div>
+</section>
 
-                <ul class="work-with-me__options">
-                    <li class="offer">
-                        <h3 class="offer__name">Root Session</h3>
-                        <p class="offer__meta">45 min · $185</p>
-                        <p>Your first step. A real conversation — not a sales call — about where you are and where you want to go.</p>
-                    </li>
-                    <li class="offer">
-                        <h3 class="offer__name">Monthly Accountability</h3>
-                        <p class="offer__meta">Monthly</p>
-                        <p>Continued coaching and accountability for those who want a steady partner as they grow.</p>
-                    </li>
-                    <li class="offer">
-                        <h3 class="offer__name">Three-Month Program</h3>
-                        <p class="offer__meta">3 months</p>
-                        <p>A deep dive through the full BLOOM Framework. This is where lasting transformation happens.</p>
-                    </li>
-                </ul>
+<section class="contact on-snow" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Tell me what's changing</h2>
+      <p class="lead">A few sentences is plenty. I reply within one business day from <a href="mailto:coach@bloomreimagined.com">coach@bloomreimagined.com</a> with times for a Root Session.</p>
+      <p>Referring someone? Therapists, veteran transition programs, and community groups can use the same form.</p>
+      <div class="social"><a href="https://www.linkedin.com/in/yvonne-padilla-94847137/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+    </div>
+    <div>
+      <form id="contact-form" action="https://formspree.io/f/xljdvayj" method="POST">
+        <input type="hidden" name="_subject" value="New Bloom Reimagined inquiry">
+        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label for="name">Name <span>(required)</span></label><input id="name" name="name" type="text" autocomplete="name" required>
+        <label for="email">Email <span>(required)</span></label><input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel">
+        <label for="message">Message <span>(required)</span></label><textarea id="message" name="message" required></textarea>
+        <p class="form-error" id="form-error" role="alert" hidden>Something went wrong. Please try again, or email <a href="mailto:coach@bloomreimagined.com">coach@bloomreimagined.com</a> directly.</p>
+        <button class="btn btn-chart" type="submit">Send message</button>
+        <p class="note">I use your details only to reply to you. No mailing list.</p>
+      </form>
+      <div class="thanks" id="thanks" tabindex="-1" hidden><h3>Thanks.</h3><p>I'll reply from coach@bloomreimagined.com within one business day. If nothing arrives, check your spam folder.</p></div>
+    </div>
+  </div>
+</section>
 
-                <p class="work-with-me__cta-text">Ready to explore what's possible? Let's start with a conversation.</p>
-                <a href="#contact" class="work-with-me__cta">Request a Root Session</a>
-            </div>
-        </div>
-    </section>
+</main>
 
-    <!-- About Section (Meet Your Coach) -->
-    <section class="meet-coach" id="about-me">
-        <div class="meet-coach__inner">
-            <h2 class="section-title">Meet Your Coach</h2>
-            
-            <div class="meet-coach__content">
-                <div class="meet-coach__image">
-                    <img src="images/yvonne-padilla-about-1x.webp" srcset="images/yvonne-padilla-about-1x.webp 280w, images/yvonne-padilla-about-2x.webp 560w" sizes="(max-width: 768px) 220px, 280px" width="280" height="280" alt="Yvonne Padilla, Transition Coach" loading="lazy" decoding="async">
-                </div>
-                <div class="meet-coach__text">
-                    <p>I spent 17 years as founding principal — building something from the ground up, pouring everything into it, and then walking away from it to figure out what came next. I know what it feels like to stand at the edge of a chapter you've closed and have no idea what the next one looks like. That's not a credential I got from a book. That's my life.</p>
-                    <p>I've spent my career coaching people through change — students, parents, teachers, families. I've sat across from people in the hardest moments of their lives and said the thing nobody else would say. I've watched people discover they were capable of far more than they believed. That's the work I was made for.</p>
-                    <p>The BLOOM Framework is built on research that actually works: Angela Duckworth's <em>Grit</em>, James Clear's <em>Atomic Habits</em>, Brené Brown's <em>Rising Strong</em>, Stephen Covey's <em>7 Habits</em>, neuroplasticity science, and more. With a Master's degree in Leadership, I've synthesized what the best minds have learned about transformation into something practical — because theory without application is just interesting reading.</p>
-                    <p>I'm not here to cheerlead you or hand you a workbook and call it coaching. I'm here to tell you the truth and stand with you while you prove to yourself that you can handle it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer class="on-ink">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="brand" href="#top"><img src="images/logo-reversed.svg" alt="" width="64" height="64" loading="lazy"><span>Bloom Reimagined</span></a>
+        <p class="results">Results depend on your effort and circumstances. I do not guarantee specific outcomes.</p>
+        <p class="results">Part of the <a href="https://discover2bloom.com">Discover to Bloom Collective</a>.</p>
+      </div>
+      <div class="cols">
+        <div><p class="h">Navigate</p><ul><li><a href="#approach">Approach</a></li><li><a href="#work">Work with me</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+        <div><p class="h">Connect</p><ul><li><a href="https://www.linkedin.com/in/yvonne-padilla-94847137/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="mailto:coach@bloomreimagined.com">Email</a></li></ul></div>
+      </div>
+    </div>
+    <div class="bottom"><p>© 2026 Bloom Reimagined LLC</p><p><a href="privacy.html">Privacy Policy</a> &nbsp; <a href="terms.html">Terms of Service</a></p></div>
+  </div>
+</footer>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact__inner">
-            <h2 class="section-title">Ready to Begin?</h2>
-            <p class="contact__text">
-                Your next chapter is waiting. Reach out to schedule a conversation about where you are and where you want to go.
-            </p>
-            
-            <form class="contact-form" action="https://formspree.io/f/xljdvayj" method="POST">
-                <input type="hidden" name="_subject" value="New Bloom Reimagined inquiry">
-                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
-                <div class="contact-form__group">
-                    <label for="name" class="contact-form__label">Name <span class="required">(required)</span></label>
-                    <input type="text" id="name" name="name" class="contact-form__input" autocomplete="name" required>
-                </div>
-                <div class="contact-form__group">
-                    <label for="email" class="contact-form__label">Email <span class="required">(required)</span></label>
-                    <input type="email" id="email" name="email" class="contact-form__input" autocomplete="email" required>
-                </div>
-                <div class="contact-form__group">
-                    <label for="phone" class="contact-form__label">Phone <span class="optional">(optional)</span></label>
-                    <input type="tel" id="phone" name="phone" class="contact-form__input" autocomplete="tel">
-                </div>
-                <div class="contact-form__group">
-                    <label for="message" class="contact-form__label">Message <span class="required">(required)</span></label>
-                    <textarea id="message" name="message" class="contact-form__textarea" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="contact-form__button">Send Message</button>
-                <p class="contact-form__note">I'll respond within one business day with times to connect. Your information stays private.</p>
-            </form>
-            <div class="contact-thanks" id="contact-thanks" aria-live="polite" tabindex="-1"></div>
+<script>
+  // Mobile menu: a closed menu is display:none, so its links leave the tab order.
+  (function () {
+    var button = document.getElementById('menu-button');
+    var menu = document.getElementById('menu');
+    function setMenu(open) {
+      button.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('open', open);
+    }
+    button.addEventListener('click', function () {
+      setMenu(button.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+        setMenu(false);
+        button.focus();
+      }
+    });
+    window.matchMedia('(min-width: 961px)').addEventListener('change', function (mq) {
+      if (mq.matches) setMenu(false);
+    });
+  })();
 
-            <div class="contact__alt">
-                <p>Or email directly: <a href="mailto:coach@bloomreimagined.com">coach@bloomreimagined.com</a></p>
-            </div>
+  // Contact form: submit in the background via Formspree AJAX.
+  // The form's action stays in place as a no-JavaScript fallback.
+  (function () {
+    var form = document.getElementById('contact-form');
+    var thanks = document.getElementById('thanks');
+    var error = document.getElementById('form-error');
+    if (!form || !thanks || !window.fetch) return;
+    var button = form.querySelector('button[type="submit"]');
+    var originalText = button.textContent;
 
-            <div class="contact__social">
-                <a href="https://www.instagram.com/bloomreimagined" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/yvonne-padilla-94847137/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      error.hidden = true;
+      button.disabled = true;
+      button.textContent = 'Sending…';
 
-    <!-- Part of Something Greater Section -->
-    <section class="collective">
-        <div class="collective__inner">
-            <h2 class="collective__title">Discover to Bloom Collective</h2>
-            <p class="collective__text">
-                Bloom Reimagined is part of the Discover to Bloom Collective — a growing community of coaches and women committed to transformation, growth, and living fully aligned with their purpose.
-            </p>
-            <p class="collective__text">
-                The Collective brings together complementary coaching expertise under one roof: 1:1 coaching, intensive breakthrough retreats, small groups, and soon — a women's roundtable, a podcast, and a YouTube channel where real conversations happen about the real stuff of life in transition.
-            </p>
-            <div class="collective__pills">
-                <span>🎙️ D2B Podcast — Coming Soon</span>
-                <span>▶️ D2B YouTube — Coming Soon</span>
-                <span>⭕ Women's Roundtable — Coming Soon</span>
-            </div>
-            <a href="https://discover2bloom.com" class="collective__link" target="_blank" rel="noopener noreferrer">Explore the Collective →</a>
-        </div>
-    </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <img src="images/logo-reversed.svg" alt="Bloom Reimagined" width="64" height="64" loading="lazy">
-                </div>
-                <div class="footer__links">
-                    <div class="footer__link-group">
-                        <p class="footer__heading">Navigate</p>
-                        <ul>
-                            <li><a href="#about">Philosophy</a></li>
-                            <li><a href="#framework">Approach</a></li>
-                            <li><a href="#about-me">About</a></li>
-                            <li><a href="#pricing">Investment</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__link-group">
-                        <p class="footer__heading">Connect</p>
-                        <ul>
-                            <li><a href="https://www.instagram.com/bloomreimagined" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                            <li><a href="https://www.linkedin.com/in/yvonne-padilla-94847137/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                            <li><a href="mailto:coach@bloomreimagined.com">Email</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2026 Bloom Reimagined LLC</p>
-                <div class="footer__legal">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu (accessible)
-        const hamburger = document.querySelector('.nav__hamburger');
-        const navLinks = document.querySelector('.nav__links');
-        const navLinkAnchors = Array.from(document.querySelectorAll('.nav__links a'));
-
-        function isMobileNav() {
-            return window.matchMedia('(max-width: 768px)').matches;
-        }
-
-        function setMenuState(open, moveFocus = true) {
-            hamburger.classList.toggle('active', open);
-            navLinks.classList.toggle('active', open);
-            hamburger.setAttribute('aria-expanded', String(open));
-
-            // On phones, a closed menu is inert: links can't be focused or read.
-            // On desktop the links are always visible and never inert.
-            navLinks.inert = isMobileNav() && !open;
-
-            if (moveFocus) {
-                if (open) {
-                    const first = navLinkAnchors[0];
-                    if (first) first.focus();
-                } else {
-                    hamburger.focus();
-                }
-            }
-        }
-
-        // Initialize state without moving focus
-        setMenuState(false, false);
-
-        hamburger.addEventListener('click', () => {
-            const open = !hamburger.classList.contains('active');
-            setMenuState(open);
-        });
-
-        // Close menu when a link is clicked (mobile)
-        navLinkAnchors.forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMobileNav()) setMenuState(false, false);
-            });
-        });
-
-        // Close on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && hamburger.classList.contains('active')) {
-                setMenuState(false);
-            }
-        });
-
-        // Close when clicking outside the menu (mobile)
-        document.addEventListener('click', (e) => {
-            if (!isMobileNav()) return;
-            const clickedInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
-            if (!clickedInsideNav && hamburger.classList.contains('active')) {
-                setMenuState(false, false);
-            }
-        });
-
-        // Keep inert correct when resizing, without moving focus
-        window.addEventListener('resize', () => {
-            const open = hamburger.classList.contains('active');
-            setMenuState(open, false);
-        });
-    </script>
-
-    <script>
-        // Contact form: submit in the background via Formspree AJAX.
-        // The form's action stays in place as a no-JavaScript fallback.
-        (function () {
-            const form = document.querySelector('.contact-form');
-            const thanks = document.getElementById('contact-thanks');
-            if (!form || !thanks || !window.fetch) return;
-
-            const button = form.querySelector('.contact-form__button');
-            const originalText = button.textContent;
-
-            const error = document.createElement('p');
-            error.className = 'contact-form__error';
-            error.setAttribute('role', 'alert');
-            error.hidden = true;
-            error.textContent = 'Something went wrong. Please try again, or email coach@bloomreimagined.com directly.';
-            button.parentNode.insertBefore(error, button);
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                error.hidden = true;
-                button.disabled = true;
-                button.textContent = 'Sending…';
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: { Accept: 'application/json' }
-                    });
-                    if (!response.ok) throw new Error('Formspree returned ' + response.status);
-
-                    form.reset();
-                    form.hidden = true;
-                    thanks.innerHTML =
-                        '<h3 class="contact-thanks__title">Thank you. Your message is on its way.</h3>' +
-                        '<p class="contact-thanks__text">I read every message personally and will reply from coach@bloomreimagined.com within one business day. I look forward to connecting with you soon!</p>';
-                    thanks.focus();
-                } catch (err) {
-                    button.disabled = false;
-                    button.textContent = originalText;
-                    error.hidden = false;
-                }
-            });
-        })();
-    </script>
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Formspree returned ' + response.status);
+        form.reset();
+        form.hidden = true;
+        thanks.hidden = false;
+        thanks.focus();
+      }).catch(function () {
+        button.disabled = false;
+        button.textContent = originalText;
+        error.hidden = false;
+      });
+    });
+  })();
+</script>
 </body>
 </html>
