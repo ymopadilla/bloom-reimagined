@@ -6,7 +6,7 @@ Transition coaching in Colorado Springs from Yvonne Padilla, a retired school pr
 
 ## About the practice
 
-Bloom Reimagined coaches men and women through the changes nobody trains you for: leaving the military, changing careers, retiring, and the quiet house after the kids move out. Coaching follows the BLOOM Framework (Believe, Listen, Observe, Own, Move). The entry point is a 45-minute Root Session for $185.
+Bloom Reimagined coaches men and women through the changes nobody trains you for: leaving the military, changing careers, retiring, and the quiet house after the kids move out. Coaching follows the BLOOM Framework (Believe, Listen, Observe, Own, Move). The entry point is a 45-minute Root Session.
 
 ---
 
