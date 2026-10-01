@@ -27,18 +27,20 @@ A hand-built static site: HTML, CSS, and a little JavaScript. No frameworks, no 
 | Token | Hex | Use |
 |---|---|---|
 | `--ink` | `#22252B` | Text, nav, hero, footer |
-| `--snow` | `#F3EFE7` | Page background; text on ink |
-| `--violet` | `#5E4B7A` | Accent: links on snow |
-| `--chartreuse` | `#C3D545` | Action: buttons, the $185 line, headshot ring |
+| `--snow` | `#F1F3F4` | Page background; text on ink or violet |
+| `--violet` | `#5E4B7A` | Accent: BLOOM band, Contact pill, mobile menu, pasqueflower card, list dots, footer strip, links on snow |
+| `--chartreuse` | `#C3D545` | Action: buttons, headshot ring, accents on ink and violet |
 
-Rules: button text is always ink. Never violet on ink. Never chartreuse as text on snow. Pure white appears only inside form fields.
+Contrast: ink on snow 13.80, violet on snow 6.83, chartreuse on snow 1.46 (never as text).
+
+Rules: button text is ink on chartreuse (snow on ink in the chartreuse band). Never violet on ink. Never chartreuse as text on snow. Pure white appears only in the form and the boundary note.
 
 **Type (self-hosted WOFF2 in `/fonts`, SIL Open Font License):**
 
 - Archivo 800 for headlines.
 - Atkinson Hyperlegible Next 400 and 700 for body text.
 
-**Logo:** pasqueflower circle stamp. The reversed SVG (`images/logo-reversed.svg`) is used in the nav and footer. The full logo kit lives in Google Drive, not in this repo.
+**Logo:** pasqueflower circle stamp. The reversed SVG (`images/logo-reversed.svg`) is used in the nav, footer, and the hero stamp. The full logo kit lives in Google Drive, not in this repo.
 
 ---
 
