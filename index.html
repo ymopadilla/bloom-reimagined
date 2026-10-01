@@ -314,32 +314,92 @@
         }
 
         /* ========================================
-           HERO (interim; restyled in the hero commit)
+           HERO (flat ink, text left, headshot right)
            ======================================== */
         .hero {
             background: var(--ink);
             color: var(--snow);
-            padding: 140px 24px 96px;
-            text-align: center;
+            padding: 136px 24px 96px;
+        }
+
+        .hero__inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-areas: "content photo";
+            align-items: center;
+            gap: 64px;
+        }
+
+        .hero__photo {
+            grid-area: photo;
+        }
+
+        .hero__photo img {
+            display: block;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            border: 3px solid var(--chartreuse);
+            padding: 6px;
+            background: var(--ink);
         }
 
         .hero__content {
-            max-width: 800px;
-            margin: 0 auto;
+            grid-area: content;
+            max-width: 640px;
         }
 
-        .hero__tagline {
-            font-family: var(--font-head);
-            font-weight: 800;
-            font-size: 2rem;
-            line-height: 1.15;
+        .hero__title {
+            color: var(--snow);
+            font-size: clamp(2rem, 4.4vw, 3.4rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
             margin-bottom: 24px;
         }
 
-        .hero__description {
+        .hero__body {
             font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto 32px;
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+
+        .hero__cost {
+            color: var(--chartreuse);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 88px 16px 64px;
+            }
+
+            .hero__inner {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "photo"
+                    "content";
+                gap: 20px;
+            }
+
+            .hero__photo img {
+                width: 160px;
+                height: 160px;
+                border-width: 3px;
+                padding: 4px;
+            }
+
+            .hero__title {
+                font-size: 1.85rem;
+                margin-bottom: 16px;
+            }
+
+            .hero__body {
+                font-size: 1.05rem;
+            }
         }
 
         /* ========================================
@@ -946,14 +1006,20 @@
     <main id="main">
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero__content">
-            <h1 class="sr-only">Bloom Reimagined</h1>
-            <p class="hero__tagline">Transition Coaching for Your Next Chapter</p>
-            <p class="hero__description">
-                We help people develop the psychological architecture that research shows actually predicts success through change. This isn't motivation. This isn't cheerleading. This is building the internal infrastructure that allows you to thrive through transition.
-            </p>
-            <a href="#contact" class="hero__cta">Start Your Transformation</a>
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner">
+            <div class="hero__photo">
+                <img src="images/yvonne-padilla-360.webp"
+                     srcset="images/yvonne-padilla-160.webp 160w, images/yvonne-padilla-320.webp 320w, images/yvonne-padilla-360.webp 360w, images/yvonne-padilla-720.webp 720w"
+                     sizes="(max-width: 768px) 160px, 360px"
+                     width="360" height="360" alt="Yvonne Padilla" fetchpriority="high" decoding="async">
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title" id="hero-title">Coaching for the stretch between what ended and what's next</h1>
+                <p class="hero__body">I'm Yvonne Padilla, a retired school principal in Colorado Springs. I coach men and women through the changes nobody trains you for: leaving the military, changing careers, retiring, and the quiet house after the kids move out. I'll tell you the truth, and I'll stay with you while you act on it.</p>
+                <p class="hero__cost">Start with a 45-minute Root Session, $185.</p>
+                <a href="#contact" class="hero__cta">Request a Root Session</a>
+            </div>
         </div>
     </section>
 
