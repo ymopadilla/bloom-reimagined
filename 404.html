@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page not found | Bloom Reimagined</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preload" href="/fonts/archivo-800.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'Archivo';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url('/fonts/archivo-800.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Atkinson Hyperlegible Next';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/atkinson-hyperlegible-next-400.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Atkinson Hyperlegible Next';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/atkinson-hyperlegible-next-700.woff2') format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ink: #22252B;
+            --snow: #F3EFE7;
+            --violet: #5E4B7A;
+            --chartreuse: #C3D545;
+
+            --font-head: 'Archivo', 'Arial Narrow', Arial, sans-serif;
+            --font-body: 'Atkinson Hyperlegible Next', Verdana, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--snow);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--ink);
+            z-index: 1000;
+            padding: 10px 24px;
+        }
+
+        .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav__logo img {
+            height: 48px;
+            width: 48px;
+            display: block;
+        }
+
+        .nav__back {
+            color: var(--snow);
+            text-decoration: none;
+        }
+
+        .nav__back:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* Content */
+        .legal {
+            padding: 120px 24px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal__title {
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .legal__updated {
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+
+        .legal h2 {
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1.4rem;
+            line-height: 1.2;
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        .legal p {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            line-height: 1.75;
+        }
+
+        .legal ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .legal li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .legal a {
+            color: var(--violet);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--ink);
+            color: var(--snow);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--snow);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .legal__title {
+                font-size: 2rem;
+            }
+
+            .legal {
+                padding: 100px 20px 60px;
+            }
+        }
+
+        .missing {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .missing__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .missing__links a.btn {
+            display: inline-block;
+            background: var(--chartreuse);
+            color: var(--ink);
+            border: 2px solid var(--chartreuse);
+            border-radius: 6px;
+            padding: 14px 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .missing__links a.btn:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .missing__links a.text {
+            padding: 14px 0;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="/" class="nav__logo">
+                <img src="/images/logo-reversed.svg" alt="Bloom Reimagined home" width="48" height="48">
+            </a>
+            <a href="/" class="nav__back">← Back to Home</a>
+        </div>
+    </nav>
+
+    <main class="legal missing">
+        <h1 class="legal__title">This page doesn't exist.</h1>
+        <p>The link may be old, or the address may have a typo.</p>
+        <div class="missing__links">
+            <a class="btn" href="/#contact">Request a Root Session</a>
+            <a class="text" href="/">Go to the home page</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Bloom Reimagined LLC</p>
+        <p style="margin-top: 12px;">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
