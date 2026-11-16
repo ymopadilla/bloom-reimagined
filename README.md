@@ -14,9 +14,11 @@ Bloom Reimagined coaches men and women through the changes nobody trains you for
 
 A hand-built static site: HTML, CSS, and a little JavaScript. No frameworks, no build step.
 
+The Content-Security-Policy in `_headers` blocks inline scripts, so page scripts go in `js/`. If you add a new outside service (a booking widget, analytics, a font host), add its address to the policy in `_headers` or it will be blocked.
+
 ### Hosting and services
 
-- **GitHub Pages** from `main` (repo root), with the custom domain in `CNAME`.
+- **Cloudflare Pages** deploys from `main` (repo root, no build step). Every push to `main` goes live; other branches get preview links. Security and cache headers live in `_headers`. (Until the switch is finished, GitHub Pages also serves `main`, with the custom domain in `CNAME`.)
 - **Cloudflare DNS** for bloomreimagined.com. Email forwarding runs through Cloudflare Email Routing; don't change the MX or routing records.
 - **Formspree** handles the contact form (AJAX submit with a no-JavaScript fallback and a `_gotcha` honeypot).
 
@@ -52,6 +54,8 @@ bloom-reimagined/
 ├── terms.html          # Terms of Service, with the coaching disclaimer
 ├── privacy.html        # Privacy Policy
 ├── 404.html            # Not-found page (noindex)
+├── js/site.js          # Mobile menu and contact form script
+├── _headers            # Cloudflare Pages security and cache headers
 ├── images/             # WebP photos and the reversed logo SVG
 ├── fonts/              # WOFF2 files and OFL license texts
 ├── og-image.png        # Social sharing image (1200x630)
