@@ -75,14 +75,25 @@
                 "https://www.linkedin.com/in/yvonne-padilla-94847137/"
             ]
         },
-        "makesOffer": {
-            "@type": "Offer",
-            "name": "Root Session",
-            "description": "A 45-minute first coaching session.",
-            "price": "185",
-            "priceCurrency": "USD",
-            "url": "https://bloomreimagined.com/#contact"
-        }
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "name": "Free intro chat",
+                "description": "A free 15-minute video call to see whether we're a good fit before booking a Root Session.",
+                "price": "0",
+                "priceCurrency": "USD",
+                "url": "https://bloomreimagined.com/#contact"
+            },
+            {
+                "@type": "Offer",
+                "name": "Root Session",
+                "description": "A 45-minute first coaching session. Founding rate of $135 through March 31, 2027 (regular price $185). Paid before the session; the amount paid counts toward a coaching package started within 14 days.",
+                "price": "135",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2027-03-31",
+                "url": "https://bloomreimagined.com/#contact"
+            }
+        ]
     }
     </script>
     <style>
@@ -245,6 +256,10 @@
         .offer.root { background: var(--ink); color: var(--snow); padding: 2.25rem 2rem; border-radius: 10px; border-bottom: none; margin: 0 0 .5rem; }
         .offer.root .meta { color: var(--chart); font-size: 1.15rem; }
         .offer p { max-width: 40rem; }
+        .offer.root .founding { font-size: .95rem; margin-top: .35rem; }
+        .offer.root .terms { list-style: none; margin-top: 1.25rem; max-width: 40rem; display: grid; gap: .6rem; }
+        .offer.root .terms li { padding-left: 1.1rem; position: relative; }
+        .offer.root .terms li::before { content: ""; position: absolute; left: 0; top: .6em; width: .45rem; height: .45rem; border-radius: 50%; background: var(--chart); }
         .sides { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0 1rem; }
         .sides h3 { color: var(--violet); margin-bottom: .5rem; }
         .both { font-weight: 700; font-size: 1.15rem; margin-bottom: 2rem; }
@@ -357,7 +372,7 @@
     <div>
       <h1>Coaching for the stretch between what ended and what's next</h1>
       <p class="lede">I'm Yvonne Padilla, a retired school principal in Colorado Springs. I coach men and women through the changes nobody trains you for: leaving the military, changing careers, retiring, and the quiet house after the kids move out. I'm honest with you, kind about it, and in your corner while you find what's next.</p>
-      <p class="price">Start with a 45-minute Root Session.</p>
+      <p class="price">Start with a free 15-minute chat or a 45-minute Root Session.</p>
       <a class="btn btn-chart" href="#contact">Request a Root Session</a>
     </div>
     <div class="portrait">
@@ -457,8 +472,16 @@
     <p class="intro">Every person comes to coaching with different needs, so the time and investment are different too. Instead of a price list, we build a plan together after your Root Session.</p>
     <ul class="offers">
       <li class="offer root on-ink">
-        <div><h3>Root Session</h3><p class="meta">45 minutes, $185</p></div>
+        <div><h3>Root Session</h3><p class="meta">45 minutes, $135</p><p class="founding">Founding rate through March 31, 2027. Regular price $185.</p></div>
+        <div>
         <p>Most people who feel stuck already know something has to change. What they can't see is what's holding them in place. In a Root Session, we find it. We look at what ended, what you want next, and what's keeping you from moving: habits, money, fear, other people's expectations, or a story you've told yourself for years. You leave knowing what's in the way and your first move. You'll also know whether I'm the right coach for you.</p>
+        <ul class="terms">
+          <li><strong>Want to meet first?</strong> Start with a free 15-minute video chat to see whether we're a fit.</li>
+          <li><strong>Paid before your session.</strong> Your time is held once payment comes through.</li>
+          <li><strong>24-hour cancellation.</strong> Cancel or reschedule at least 24 hours ahead and you lose nothing. With less notice, or if you miss the session, the fee isn't refunded.</li>
+          <li><strong>It counts toward more.</strong> Start a coaching package within 14 days, and what you paid for your Root Session comes off the package price.</li>
+        </ul>
+        </div>
       </li>
       <!-- working name -->
       <li class="offer">
@@ -506,7 +529,7 @@
   <div class="wrap">
     <div>
       <h2>Tell me what's changing</h2>
-      <p class="lead">A few sentences is plenty. I reply within one business day from <a href="mailto:coach@bloomreimagined.com">coach@bloomreimagined.com</a> with times for a Root Session.</p>
+      <p class="lead">A few sentences is plenty. I reply within one business day from <a href="mailto:coach@bloomreimagined.com">coach@bloomreimagined.com</a> with times for a free 15-minute intro chat or a Root Session, whichever you'd like.</p>
       <p>Referring someone? Therapists, veteran transition programs, and community groups can use the same form.</p>
       <div class="social"><a href="https://www.linkedin.com/in/yvonne-padilla-94847137/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
